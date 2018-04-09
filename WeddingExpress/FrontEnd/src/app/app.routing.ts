@@ -6,8 +6,6 @@ import {AccSettingsComponent} from "./candiate/acc-settings/acc-settings.compone
 import {MessegesComponent} from "./candiate/messeges/messeges.component";
 import {VendorsComponent} from "./candiate/vendors/vendors.component";
 import {AppoinmentsComponent} from "./candiate/appoinments/appoinments.component";
-import {TaskManagerComponent} from "./candiate/task-manager/task-manager.component";
-
 
 export const AppRoutes: Routes = [
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -15,7 +13,6 @@ export const AppRoutes: Routes = [
     { path: 'user', component: UserComponent },
     { path: 'messeges', component: MessegesComponent },
     { path: 'acc-settings', component: AccSettingsComponent },
-    { path: 'task-manager', component: TaskManagerComponent },
     { path: 'icons', component: IconsComponent },
     { path: 'appoinments', component: AppoinmentsComponent },
     { path: 'vendors', component: VendorsComponent }

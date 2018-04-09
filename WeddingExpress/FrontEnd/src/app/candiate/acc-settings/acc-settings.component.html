@@ -1,57 +1,82 @@
- <div class="card">
-    <div class="header">
-      <h4 class="title">Change Password</h4>
-    </div>
-    <div class="content">
-      <form>
-        <div class="row">
-          <div class="col-md-5">
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" class="form-control border-input" disabled placeholder="Email Address" value="lakithaprabudh96@gmail.com">
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-5">
-            <div class="form-group">
-              <label>Current Password</label>
-              <input type="password" class="form-control border-input" placeholder="Enter your current password">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-5">
-              <div class="form-group">
-                <label>Retype Password</label>
-                <input type="password" class="form-control border-input" placeholder="Retype your entered password">
-              </div>
-            </div>
-          </div>
-
-        <div class="row">
-          <div class="col-md-5">
-            <div class="form-group">
-              <button style="margin-left: 10px" type="submit" class="btn btn-info btn-fill btn-wd">Change Password</button>
-            </div>
-          </div>
-        </div>
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <p style="margin-left: 10px"><a style="color: darkred" href="#">Delete your account</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="clearfix"></div>
-            </div>
-
-        </div>
-      </form>
-    </div>
+<div class="card">
+  <div class="header">
+    <h4 class="title">Change Password</h4>
   </div>
+  <div class="content">
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control border-input" disabled placeholder="Email Address"
+                   value="wijesekaraishani23@gmail.com">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Current Password</label>
+            <input type="password" class="form-control border-input" placeholder="Enter your current password"
+                   formControlName="password" #passwordd>
+            <!--<span class="text-muted" *ngIf="!form-control['password'].valid && form.controls['password']?.touched"> Password is required</span>-->
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="password.touched && password.invalid" style="width: 40%">
+        <span class="text-muted" *ngIf="password.errors.required"> Password is required</span>
+        <span class="text-muted" *ngIf="password.errors.minlength"> Password must be minimum 8 characters</span>
+        <span class="text-muted" *ngIf="password.errors.pattern"> Password should have at least 8 characters in length,
+                    Lowercase letters,
+                    Uppercase letters,
+                    Numbers,
+                    Special characters.</span>
+        <span class="text-muted" *ngIf="password.errors.pattern && !confirm_password.errors.required">Invali..</span>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label>Retype Password</label>
+            <input type="password" class="form-control border-input"  placeholder="Retype your entered password"
+                   d="confirm_password" formControlName="confirm_password">
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="confirm_password.touched && confirm_password.invalid" style="width: 40%">
+        <span class="text-muted" *ngIf="confirm_password.errors.required"> Password is required</span>
+        <span class="text-muted" *ngIf="confirm_password.errors.minlength"> Password must be minimum 6 characters</span>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <button style="margin-left: 10px" type="submit" class="btn btn-info btn-fill btn-wd">Change Password
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-8">
+        <div class="form-group">
+          <p style="margin-left: 30px; margin-top: 10px"><a style="color: darkred" href="#">Delete your account</a></p>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="clearfix"></div>
+      </div>
+
+    </form>
+  </div>
+</div>
 
 
 

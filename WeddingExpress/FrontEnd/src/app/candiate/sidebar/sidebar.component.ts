@@ -14,11 +14,10 @@ export const ROUTES: RouteInfo[] = [
     { path: 'vendors', title: 'Vendors',  icon:'ti-archive', class: '' },
     { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
     { path: 'messeges', title: 'Messages',  icon:'ti-comments', class: '' },
-    { path: 'task-manager', title: 'Task Manager',  icon:'ti-clipboard', class: '' },
+    { path: 'acc-settings', title: 'Account Settings',  icon:'ti-settings', class: '' },
     { path: 'icons', title: 'Icons',  icon:'ti-pencil-alt2', class: '' },
     { path: 'appoinments', title: 'Appointments',  icon:'ti-notepad', class: '' },
-    { path: 'acc-settings', title: 'Account Settings',  icon:'ti-settings', class: '' },
-
+    { path: 'upgrade', title: 'Upgrade to PRO',  icon:'ti-export', class: 'active-pro' },
 ];
 
 @Component({
