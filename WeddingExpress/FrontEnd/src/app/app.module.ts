@@ -23,8 +23,6 @@ import {AccSettingsComponent} from "./candiate/acc-settings/acc-settings.compone
 import { MessegesComponent } from './candiate/messeges/messeges.component';
 import { WeddingFeedsComponent } from './candiate/wedding-feeds/wedding-feeds.component';
 import { AppoinmentsComponent } from './candiate/appoinments/appoinments.component';
-import { TaskManagerComponent } from './candiate/task-manager/task-manager.component';
-import { BudgetCalculateComponent } from './candiate/budget-calculate/budget-calculate.component';
 
 
 
@@ -43,9 +41,7 @@ import { BudgetCalculateComponent } from './candiate/budget-calculate/budget-cal
     TestComponent,
     MessegesComponent,
     WeddingFeedsComponent,
-    AppoinmentsComponent,
-    TaskManagerComponent,
-    BudgetCalculateComponent
+    AppoinmentsComponent
   ],
   imports: [
     BrowserModule,
