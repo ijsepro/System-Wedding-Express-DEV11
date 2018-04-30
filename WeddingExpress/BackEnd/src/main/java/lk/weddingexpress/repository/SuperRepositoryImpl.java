@@ -1,5 +1,9 @@
 package lk.weddingexpress.repository;
 
+/**
+ * @author lakitha
+ */
+
 import org.hibernate.Session;
 
 import java.io.Serializable;

@@ -1,5 +1,9 @@
 package lk.weddingexpress.entity;
 
+/**
+ * @author lakitha
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,24 +18,18 @@ public class User {
     private String email;
     private String fullName;
     private String username;
-    private String address;
     private String phoneNumber;
-    private String aboutme;
-    private String gender;
-    private String partnerName;
+    private String password;
 
     public User() {
     }
 
-    public User(String email, String fullName, String username, String address, String phoneNumber, String aboutme, String gender, String partnerName) {
+    public User(String email, String fullName, String username, String phoneNumber, String password) {
         this.email = email;
         this.fullName = fullName;
         this.username = username;
-        this.address = address;
         this.phoneNumber = phoneNumber;
-        this.aboutme = aboutme;
-        this.gender = gender;
-        this.partnerName = partnerName;
+        this.password = password;
     }
 
     public int getUid() {
@@ -66,14 +64,6 @@ public class User {
         this.username = username;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -82,28 +72,12 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAboutme() {
-        return aboutme;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAboutme(String aboutme) {
-        this.aboutme = aboutme;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getPartnerName() {
-        return partnerName;
-    }
-
-    public void setPartnerName(String partnerName) {
-        this.partnerName = partnerName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -113,11 +87,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", username='" + username + '\'' +
-                ", address='" + address + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", aboutme='" + aboutme + '\'' +
-                ", gender='" + gender + '\'' +
-                ", partnerName='" + partnerName + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

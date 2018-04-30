@@ -1,5 +1,9 @@
 package lk.weddingexpress.business.custom.impl;
 
+/**
+ * @author lakitha
+ */
+
 import lk.weddingexpress.business.custom.UserBO;
 import lk.weddingexpress.dto.UserDTO;
 import lk.weddingexpress.entity.User;
@@ -30,10 +34,8 @@ public class UserBOImpl implements UserBO {
             user.setEmail(u.getEmail());
             user.setFullName(u.getFullName());
             user.setPhoneNumber(u.getPhoneNumber());
-            user.setAddress(u.getAddress());
-            user.setGender(u.getGender());
-            user.setAboutme(u.getAboutme());
-            user.setPartnerName(u.getPartnerName());
+            user.setPassword(u.getPassword());
+            user.setUsername(u.getUsername());
             result = userRepository.save(user);
             session.getTransaction().commit();
         } catch (Exception e) {

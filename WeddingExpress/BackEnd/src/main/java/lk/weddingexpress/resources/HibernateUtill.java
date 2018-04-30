@@ -1,5 +1,8 @@
 package lk.weddingexpress.resources;
 
+/**
+ * @author lakitha
+ */
 
 import lk.weddingexpress.entity.User;
 import org.hibernate.SessionFactory;

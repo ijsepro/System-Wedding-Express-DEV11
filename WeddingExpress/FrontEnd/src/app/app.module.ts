@@ -1,12 +1,14 @@
+import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -14,6 +16,7 @@ import { UserComponent } from './candidate/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { SignupServiceService } from './services/signup-service.service';
 
 
 @NgModule({
@@ -39,9 +42,13 @@ import { SignupComponent } from './signup/signup.component';
 
     ]),
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    SignupServiceService,
+    { provide: ErrorHandler, useClass: AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

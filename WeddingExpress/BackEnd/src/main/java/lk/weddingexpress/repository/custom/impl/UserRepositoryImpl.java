@@ -1,5 +1,9 @@
 package lk.weddingexpress.repository.custom.impl;
 
+/**
+ * @author lakitha
+ */
+
 import lk.weddingexpress.entity.User;
 import lk.weddingexpress.repository.SuperRepositoryImpl;
 import lk.weddingexpress.repository.custom.UserRepository;
