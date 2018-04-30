@@ -1,0 +1,54 @@
+package lk.weddingexpress.business.custom.impl;
+
+import lk.weddingexpress.business.custom.UserBO;
+import lk.weddingexpress.dto.UserDTO;
+import lk.weddingexpress.entity.User;
+import lk.weddingexpress.repository.RepositoryFactory;
+import lk.weddingexpress.repository.custom.UserRepository;
+import lk.weddingexpress.resources.HibernateUtill;
+import org.hibernate.Session;
+
+import java.util.List;
+
+public class UserBOImpl implements UserBO {
+
+    private UserRepository userRepository;
+
+    public UserBOImpl(){
+
+        userRepository= (UserRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USER);
+
+    }
+
+    @Override
+    public boolean save(UserDTO u) {
+        boolean result=false;
+        try(Session session = HibernateUtill.getSessionFactory().openSession()){
+            userRepository.setSession(session);
+            session.beginTransaction();
+            User user=new User();
+            user.setEmail(u.getEmail());
+            user.setFullName(u.getFullName());
+            user.setPhoneNumber(u.getPhoneNumber());
+            user.setAddress(u.getAddress());
+            user.setGender(u.getGender());
+            user.setAboutme(u.getAboutme());
+            user.setPartnerName(u.getPartnerName());
+            result = userRepository.save(user);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    @Override
+    public List<UserDTO> getAll() throws Exception {
+        return null;
+    }
+
+    @Override
+    public boolean update(UserDTO userDTO) throws Exception {
+        return false;
+    }
+}
