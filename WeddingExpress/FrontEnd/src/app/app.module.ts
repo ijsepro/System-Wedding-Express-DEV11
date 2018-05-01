@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
+import { DashboardComponent } from './candidate/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SignupServiceService } from './services/signup-service.service';
     UserComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
