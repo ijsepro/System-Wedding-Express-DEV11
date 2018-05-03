@@ -1,5 +1,5 @@
-<!--  Paper Dashboard core CSS    -->
-<link href="./assets/css/paper-dashboard.css" rel="stylesheet"/>
+
+
 
         <img class="img-fluid" src="assets/img/cvr-sign.jpg" alt="..."/>
 
@@ -28,7 +28,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Full Name</label>
-                                <input formControlName="name" type="text"  class="form-control border-input " placeholder="Your full name" name="fullName" ng-modal="text"  required >
+                                <input formControlName="name" type="text"  class="form-control border-input " placeholder="Your full name" name="name" ng-modal="text"  required >
                                 <br> <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Comfirm Password</label>
-                                        <input formControlName="rePassword" type="password"  class="form-control border-input " placeholder="Retype password">
+                                        <input (keyup)="hasMatched($event)" formControlName="rePassword" type="password"  class="form-control border-input " placeholder="Retype password">
                                         <br> <div class="alert" *ngIf="!rForm.controls['rePassword'].valid && rForm.controls['rePassword'].touched">{{ titleAlert }}</div>
                                     </div>
                                 </div>
@@ -72,20 +72,22 @@
                         </div>
                 </div>
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-1">
                         <div class="form-group">
-                            <input formControlName="checkbox" type="checkbox"  class="form-control border-input " placeholder="Your Phone Number" name="check" ngModel>
+                            
+                            <input formControlName="checkbox" type="checkbox"  class="form-control border-input " placeholder="Your Phone Number" name="check" ngModel> agree to the site privacy and policy
                             <br> <div class="alert" *ngIf="!rForm.controls['checkbox'].valid && rForm.controls['checkbox'].touched">{{ titleAlert }}</div>
+                            
                         </div>
-                    </div>
+                    </div> -->
                     
-                    <div class="col-md-6">
-                        <!-- <div class="form-group"> -->
-                            <label>agree to the site privacy and policy</label>
-                        <!-- </div> -->
+                    <!-- <div class="col-md-6">
+                        < <div class="form-group"> -->
+                            
+                        <!-- </div> 
                     </div>
-            </div>
+            </div> -->
 
                     <div class="text-center">
                             <button type="button" class="btn btn-primary" (click)="login()" >Login with Google</button>

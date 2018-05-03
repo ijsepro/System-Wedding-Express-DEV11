@@ -67,6 +67,12 @@
             <version>5.1.6</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+
     </dependencies>
     <properties>
         <jersey.version>2.27</jersey.version>

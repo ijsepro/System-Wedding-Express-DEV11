@@ -7,6 +7,7 @@ package lk.weddingexpress.service;
 import lk.weddingexpress.business.BOFactory;
 import lk.weddingexpress.business.custom.UserBO;
 import lk.weddingexpress.dto.UserDTO;
+import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -25,7 +26,7 @@ public class UserService {
     @POST
     @Path("crt")
     @Produces(MediaType.APPLICATION_JSON)
-    public boolean createUser(UserDTO userDTO){
-        return userBo.save(userDTO);
+    public boolean createUser(UserDTO u){
+        return userBo.save(u);
     }
 }

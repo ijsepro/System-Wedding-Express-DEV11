@@ -42,6 +42,7 @@
           <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
           <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Maven: org.jasypt:jasypt:1.9.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

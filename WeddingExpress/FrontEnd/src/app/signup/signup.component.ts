@@ -31,18 +31,18 @@ export class SignupComponent implements OnInit {
       'email' : [null, Validators.compose([Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])]) ],
       'name' : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(20)])],
       'username' : [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)])],
-      'password' : [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*\d).{4,20}$')])],
+      'password' : [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*\[A-Z]).{4,20}$')])],
       'rePassword' : [null, Validators.required],
-      'phoneNumber' : [null, Validators.compose([Validators.required, Validators.pattern('^(0|[1-9][0-9]*)$'), Validators.minLength(10), Validators.maxLength(10)])],
-      'checkbox' : [null, Validators.required],
+      'phoneNumber' : [null, Validators.compose([Validators.required, Validators.pattern('^[0-9\ \(\)\+]{10}$'), Validators.minLength(10), Validators.maxLength(10)])],
+      // 'checkbox' : [null, Validators.required],
     });
   }
 
-  hasMatched(){
-    if(this.password === this.rePassword){
-      // Validators.required
+  hasMatched(rePass: any){
+    if(this.password === rePass.value){
       this.hasMatch = true;
     }else{
+      
       return this.hasMatch = false;
     }
   }
@@ -64,9 +64,10 @@ export class SignupComponent implements OnInit {
   createUser(UserForm){
     let u={userData: UserForm.value};
      let user={email: u.userData.email, 
-      fullName: u.userData.fullName, 
-      userName: u.userData.userName,
+      fullName: u.userData.name,
+      userName: u.userData.username,
       password: u.userData.password,
+      phoneNumber: u.userData.phoneNumber
       };
     //  this.aliens.splice(0, 0, alien);
 
