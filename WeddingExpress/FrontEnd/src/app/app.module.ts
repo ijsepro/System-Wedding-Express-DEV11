@@ -43,8 +43,9 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignupComponent}
-      
+      {path: 'signup', component: SignupComponent},
+      {path: 'user-dashboard', component: UserDashboardComponent},
+      {path: 'budget-cal', component: BudgetCalculatorComponent},
 
     ]),
     NgbModule.forRoot(),
