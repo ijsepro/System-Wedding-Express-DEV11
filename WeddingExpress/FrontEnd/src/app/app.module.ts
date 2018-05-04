@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
+import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
+import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { DashboardComponent } from './candidate/dashboard/dashboard.component';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserDashboardComponent,
+    BudgetCalculatorComponent
   ],
   imports: [
     BrowserModule,
