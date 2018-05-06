@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface UserBO extends SuperBO{
 
-    public boolean save (UserDTO userDTO);
+    public boolean save(UserDTO userDTO);
 
     public List<UserDTO> getAll() throws Exception;
 

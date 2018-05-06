@@ -4,17 +4,18 @@ package lk.weddingexpress.repository;
  * @author lakitha
  */
 
+import lk.weddingexpress.repository.custom.impl.UserDetailRepositoryImpl;
 import lk.weddingexpress.repository.custom.impl.UserRepositoryImpl;
 
 public class RepositoryFactory {
 
     public enum RepositoryTypes{
-        USER
+        USER,USERDETAIL
     }
 
     public static RepositoryFactory repositoryFactory;
 
-    public RepositoryFactory() {
+    private RepositoryFactory() {
     }
 
     public static RepositoryFactory getInstance(){
@@ -28,6 +29,8 @@ public class RepositoryFactory {
         switch(repositoryTypes){
             case USER:
                 return new UserRepositoryImpl();
+            case USERDETAIL:
+                return new UserDetailRepositoryImpl();
             default:
                 return null;
         }

@@ -11,13 +11,13 @@ import lk.weddingexpress.repository.RepositoryFactory;
 import lk.weddingexpress.repository.custom.UserRepository;
 import lk.weddingexpress.resources.HibernateUtill;
 import org.hibernate.Session;
-import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import java.util.List;
 
 public class UserBOImpl implements UserBO {
 
     private UserRepository userRepository;
+
 
     public UserBOImpl(){
 
@@ -31,15 +31,11 @@ public class UserBOImpl implements UserBO {
         try(Session session = HibernateUtill.getSessionFactory().openSession()){
             userRepository.setSession(session);
             session.beginTransaction();
-
-            StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
-            String encryptedPassword = passwordEncryptor.encryptPassword(u.getPassword());
-
             User user=new User();
             user.setEmail(u.getEmail());
             user.setFullName(u.getFullName());
             user.setPhoneNumber(u.getPhoneNumber());
-            user.setPassword(encryptedPassword);
+            user.setPassword(u.getPassword());
             user.setUsername(u.getUsername());
             result = userRepository.save(user);
             session.getTransaction().commit();

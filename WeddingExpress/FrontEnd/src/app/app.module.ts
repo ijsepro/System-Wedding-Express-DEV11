@@ -1,3 +1,4 @@
+import { UserdetailService } from './services/userdetail.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -49,7 +50,7 @@ import { DashboardComponent } from './candidate/dashboard/dashboard.component';
     ReactiveFormsModule
   ],
   providers: [
-    SignupServiceService,
+    SignupServiceService,UserdetailService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

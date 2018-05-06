@@ -1,5 +1,8 @@
 
 
+<!--  Paper Dashboard core CSS    -->
+<link href="./assets/css/paper-dashboard.css" rel="stylesheet"/>
+
 
 
 <div class="container-fluid">
@@ -40,7 +43,8 @@
                     <h4 class="title">Edit Profile</h4>
                 </div>
                 <div class="content">
-                    <form>
+                    <form [formGroup]="userForm" (ngSubmit)="updateUserDetail(userForm)" >
+                            <!-- <form [formGroup]="rForm" (ngSubmit) = "validation(rForm.value)" (ngSubmit)="updateUserDetail(rForm)" > -->
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
@@ -104,7 +108,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+                            <button  (click)="(updateUserDetail(userdetail))" type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
                         </div>
                         <div class="clearfix"></div>
                     </form>
