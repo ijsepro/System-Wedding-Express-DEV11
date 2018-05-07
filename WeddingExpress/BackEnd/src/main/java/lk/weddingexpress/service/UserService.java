@@ -7,14 +7,16 @@ package lk.weddingexpress.service;
 import lk.weddingexpress.business.BOFactory;
 import lk.weddingexpress.business.custom.UserBO;
 import lk.weddingexpress.dto.UserDTO;
-import org.jasypt.util.password.StrongPasswordEncryptor;
+
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.ext.Provider;
 
 @Path("user")
+
 public class UserService {
 
     private UserBO userBo;
