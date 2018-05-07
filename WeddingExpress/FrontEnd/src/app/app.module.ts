@@ -1,3 +1,4 @@
+import { UserdetailService } from './services/userdetail.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,8 +19,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
-import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
-import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
 
 
 @NgModule({
@@ -30,9 +29,7 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent,
-    UserDashboardComponent,
-    BudgetCalculatorComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +40,8 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignupComponent},
-      {path: 'user-dashboard', component: UserDashboardComponent},
-      {path: 'budget-cal', component: BudgetCalculatorComponent},
+      {path: 'signup', component: SignupComponent}
+      
 
     ]),
     NgbModule.forRoot(),
@@ -54,7 +50,7 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
     ReactiveFormsModule
   ],
   providers: [
-    SignupServiceService,
+    SignupServiceService,UserdetailService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

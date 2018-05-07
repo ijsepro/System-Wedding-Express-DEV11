@@ -18,4 +18,8 @@ public interface SuperRepository <T, ID> {
 
     public void update(T t) throws Exception;
 
+    public T findById(ID id)throws Exception;
+
+    public T getUsers(String id)throws Exception;
+
 }

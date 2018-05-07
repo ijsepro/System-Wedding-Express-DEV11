@@ -12,39 +12,28 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  hasMatch: boolean = false;
-
   textDes:string ='';
   textPartner:string='';
   textUser:string='';
 
   rForm: FormGroup;
   post: any;
-  email: string = ''; name: string = ''; username: string = ''; password: string = '';
-  rePassword: string = ''; phoneNumber: string = ''; checkbox: string = '';
+  description:string = '';
+  name:string ='';
   titleAlert:string = 'This field is required';
 
-  constructor(private afAuth: AngularFireAuth, private service: SignupServiceService,private fb: FormBuilder) { }
+  constructor(private afAuth: AngularFireAuth, private service: SignupServiceService, fb: FormBuilder) {
+    this.rForm = fb.group({
+      'name' : [null, Validators.required],
+      // 'username' : [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)])],
+      // 'address' : [null, Validators.compose([Validators.required, Validators.minLength(6)])],
+      // 'age' : [null, Validators.compose([Validators.required, Validators.min(16)])],
+      'description' : [null, Validators.compose([Validators.required, Validators.minLength(30), Validators.maxLength(500)])],
+    });
+   }
 
   ngOnInit() {
-    this.rForm = this.fb.group({
-      'email' : [null, Validators.compose([Validators.compose([Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')])]) ],
-      'name' : [null, Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(20)])],
-      'username' : [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)])],
-      'password' : [null, Validators.compose([Validators.required, Validators.pattern('^(?=.*\[A-Z]).{4,20}$')])],
-      'rePassword' : [null, Validators.required],
-      'phoneNumber' : [null, Validators.compose([Validators.required, Validators.pattern('^[0-9\ \(\)\+]{10}$'), Validators.minLength(10), Validators.maxLength(10)])],
-      // 'checkbox' : [null, Validators.required],
-    });
-  }
-
-  hasMatched(rePass: any){
-    if(this.password === rePass.value){
-      this.hasMatch = true;
-    }else{
-      
-      return this.hasMatch = false;
-    }
+   
   }
 
   login(){
@@ -52,22 +41,16 @@ export class SignupComponent implements OnInit {
   }
 
   validation(userForm){
-    this.email = userForm.email;
+    this.description = userForm.description;
     this.name = userForm.name;
-    this.username =  userForm.username;
-    this.password = userForm.password;
-    this.rePassword =  userForm.rePassword;
-    this.checkbox = userForm.checkbox;
-
   }
 
   createUser(UserForm){
     let u={userData: UserForm.value};
      let user={email: u.userData.email, 
-      fullName: u.userData.name,
-      userName: u.userData.username,
+      fullName: u.userData.fullName, 
+      userName: u.userData.userName,
       password: u.userData.password,
-      phoneNumber: u.userData.phoneNumber
       };
     //  this.aliens.splice(0, 0, alien);
 
