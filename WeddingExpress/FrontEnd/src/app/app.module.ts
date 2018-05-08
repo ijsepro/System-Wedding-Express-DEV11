@@ -8,7 +8,8 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule }   from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -17,9 +18,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
+import { LogInServiceService } from './services/login.service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
-import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
-import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
+import { FormBuilderModule } from "angular-form-builder";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,11 +32,12 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent,
-    UserDashboardComponent,
-    BudgetCalculatorComponent
+    DashboardComponent
+   
   ],
   imports: [
+    ReactiveFormsModule,
+    FormBuilderModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -43,18 +46,18 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignupComponent},
-      {path: 'user-dashboard', component: UserDashboardComponent},
-      {path: 'budget-cal', component: BudgetCalculatorComponent},
+      {path: 'signup', component: SignupComponent}
+      
 
     ]),
     NgbModule.forRoot(),
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    CustomFormsModule
   ],
   providers: [
     SignupServiceService,
+    LogInServiceService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
