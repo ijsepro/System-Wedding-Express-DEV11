@@ -11,7 +11,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatDialogModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatInputModule , MatNativeDateModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -65,7 +65,8 @@ import { AppoinmentComponent } from './candidate/appoinment/appoinment.component
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatCheckboxModule, MatButtonModule, MatDialogModule
+    MatCheckboxModule, MatButtonModule, MatDialogModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule,
+    MatInputModule 
   ],
   providers: [
     SignupServiceService,

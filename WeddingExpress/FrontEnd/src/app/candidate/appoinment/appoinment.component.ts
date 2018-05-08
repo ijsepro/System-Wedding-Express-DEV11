@@ -11,7 +11,9 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 })
 export class AppoinmentComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) data: any) { console.log("data ", data) }
+  constructor(@Inject(MAT_DIALOG_DATA) data: any) { 
+    console.log("data ", data);
+  }
 
   ngOnInit() {
   }
