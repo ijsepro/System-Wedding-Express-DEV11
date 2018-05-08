@@ -1,3 +1,4 @@
+import { ApponimentService } from './services/apponiment.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatDialogModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -20,6 +23,9 @@ import { SignupServiceService } from './services/signup-service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
 import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
 import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
+import { VendorDashboardComponent } from './business/vendor-dashboard/vendor-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
+import { AppoinmentComponent } from './candidate/appoinment/appoinment.component';
 
 
 @NgModule({
@@ -32,7 +38,13 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
     SignupComponent,
     DashboardComponent,
     UserDashboardComponent,
-    BudgetCalculatorComponent
+    BudgetCalculatorComponent,
+    VendorDashboardComponent,
+    FooterComponent,
+    AppoinmentComponent
+  ],
+  entryComponents: [
+    AppoinmentComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +63,14 @@ import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-
     NgbModule.forRoot(),
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule, MatButtonModule, MatDialogModule
   ],
   providers: [
     SignupServiceService,
+    ApponimentService,
+    { provide: ApponimentService, useClass: ApponimentService},
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
+import { AppoinmentComponent } from './../appoinment/appoinment.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  makeAppoinment(){
+    this.dialog.open(AppoinmentComponent, {
+      data: { name: "Wedded Photograpghy"}
+    })
+      .afterClosed()
+      .subscribe(result => console.log(result));
   }
 
 }
