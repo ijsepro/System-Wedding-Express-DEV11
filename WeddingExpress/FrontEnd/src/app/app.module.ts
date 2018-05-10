@@ -17,11 +17,15 @@ import { UserComponent } from './candidate/user/user.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { LoginVendorComponent } from './login-vendor/login-vendor.component';
+import { DashboardComponent } from './candidate/dashboard/dashboard.component';
+
 import { SignupServiceService } from './services/signup-service.service';
 import { LogInServiceService } from './services/login.service.service';
-import { DashboardComponent } from './candidate/dashboard/dashboard.component';
+import { LogInVendorServiceService } from './services/login-vendor.service.service';
 import { FormBuilderModule } from "angular-form-builder";
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -32,8 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
-   
+    DashboardComponent,
+    LoginVendorComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -46,9 +50,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignupComponent}
+      {path: 'signup', component: SignupComponent},
+      {path: 'login-vendor',component:LoginVendorComponent}
       
-
     ]),
     NgbModule.forRoot(),
     HttpModule,
@@ -58,6 +62,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   providers: [
     SignupServiceService,
     LogInServiceService,
+    LogInVendorServiceService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

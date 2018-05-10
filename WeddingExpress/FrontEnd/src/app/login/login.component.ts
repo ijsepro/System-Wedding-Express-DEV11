@@ -18,26 +18,20 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
   userForm: FormGroup;
 
-  txtpassword: string ='';
-  txtemail:string='';
-
-  email:string ='';
-  password:string ='';
-  titleAlert:string = 'This field is required';
-
   constructor(private afAuth: AngularFireAuth, private service: LogInServiceService ,private fb: FormBuilder) { 
     this.userForm = fb.group({
       'email' : [null, Validators.required],
       'password' : [null, Validators.required]
     });
   }
+  txtpassword: string ='';
+  txtemail:string='';
 
+  email:string ='';
+  password:string ='';
+  titleAlert:string = 'This field is required';
   ngOnInit() {
-      this.service.getAll()
-      .subscribe(Response => {
-        this.userForm=Response.json();
-        console.log(Response.json());
-      })
+  
   }
 
   login(){
