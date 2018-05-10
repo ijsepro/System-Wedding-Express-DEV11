@@ -1,4 +1,3 @@
-import { UserdetailService } from './services/userdetail.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,7 +8,8 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule }   from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -18,7 +18,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
+import { LogInServiceService } from './services/login.service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
+import { FormBuilderModule } from "angular-form-builder";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -30,8 +33,11 @@ import { DashboardComponent } from './candidate/dashboard/dashboard.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent
+   
   ],
   imports: [
+    ReactiveFormsModule,
+    FormBuilderModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -47,10 +53,11 @@ import { DashboardComponent } from './candidate/dashboard/dashboard.component';
     NgbModule.forRoot(),
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    CustomFormsModule
   ],
   providers: [
-    SignupServiceService,UserdetailService,
+    SignupServiceService,
+    LogInServiceService,
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

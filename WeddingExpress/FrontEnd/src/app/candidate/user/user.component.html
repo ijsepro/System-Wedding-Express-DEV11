@@ -43,15 +43,12 @@
                     <h4 class="title">Edit Profile</h4>
                 </div>
                 <div class="content">
-                    <form [formGroup]="rForm" (ngSubmit) = "validation(rForm.value)" (ngSubmit)=" updateUser(rForm)" >
-                          
+                    <form>
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input formControlName="email"   type="text" class="form-control border-input" placeholder="Email Address" ng-model="text" req >
-                                    <br>
-                                    <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }}</div>
+                                    <input type="email" class="form-control border-input" disabled placeholder="Email Address" value="lakithaprabudh96@gmail.com">
                                 </div>
                             </div>
                         </div>
@@ -60,9 +57,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Full Name</label>
-                                    <input formControlName="name" type="text"  class="form-control border-input " placeholder="Your full name" ng-modal="text"  required >
-                                  <br>
-                                    <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+                                    <input type="text"  class="form-control border-input " placeholder="Your full name" ng-modal="text"  required >
+
 <!-- <input type="text" class="form-control" [(ngModel)]="name" name="name" minlength="5" required>-->
                                   <!---->
 
@@ -71,10 +67,8 @@
 
                           <div class="col-md-3">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input formControlName="username" type="text" class="form-control border-input" [(ngModel)]="textUser" placeholder="Your username">
-                                <br>
-                                <div class="alert" *ngIf="!rForm.controls['username'].valid && rForm.controls['username'].touched">Username must be 5 to 10 characters</div>
+                              <label>Username</label>
+                              <input type="text" class="form-control border-input" placeholder="Your username">
                             </div>
                           </div>
 
@@ -84,9 +78,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input formControlName="address" type="text" class="form-control border-input" placeholder="Home Address">
-                                  <br>
-                                  <div class="alert" *ngIf="!rForm.controls['address'].valid && rForm.controls['address'].touched">Invalid address</div>
+                                    <input type="text" class="form-control border-input" placeholder="Home Address">
                                 </div>
                             </div>
                         </div>
@@ -95,17 +87,13 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Age</label>
-                                    <input formControlName="age" type="number" class="form-control border-input" placeholder="Your age">
-                                  <br>
-                                  <div class="alert" *ngIf="!rForm.controls['age'].valid && rForm.controls['age'].touched">Age must be over 16</div>
+                                    <input type="number" class="form-control border-input" placeholder="Your age">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label>Partner name</label>
-                                    <!--<textarea formControlName="partner" rows="1" class="form-control border-input" [(ngModel)]="textPartner" placeholder="Your Partner Name"></textarea>-->
-                                      <input formControlName="partner" type="text" class="form-control border-input" [(ngModel)]="textPartner" placeholder="Your Partner name">
-                                  
+                                    <input type="text" class="form-control border-input" placeholder="Your Partner name">
                                 </div>
                             </div>
                         </div>
@@ -114,14 +102,12 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>About Me</label>
-                                    <textarea formControlName="description" rows="5" class="form-control border-input" [(ngModel)]="textDes" placeholder="Here can be your description"></textarea>
-                                  <br>
-                                  <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">You have to enter between 30 to 500 charcters...</div>
+                                    <textarea rows="5" class="form-control border-input" placeholder="Here can be your description"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="text-center">
-                            <button [disabled]="!rForm.valid" type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
+                            <button type="submit" class="btn btn-info btn-fill btn-wd">Update Profile</button>
                         </div>
                         <div class="clearfix"></div>
                     </form>

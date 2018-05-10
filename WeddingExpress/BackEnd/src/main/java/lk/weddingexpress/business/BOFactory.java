@@ -1,36 +1,35 @@
-package lk.weddingexpress.business;
+package lk.weddingexpress.buisness;
 
-/**
- * @author lakitha
- */
-
-import lk.weddingexpress.business.custom.impl.UserBOImpl;
-import lk.weddingexpress.business.custom.impl.UserDetaiImpl;
+import lk.weddingexpress.buisness.custom.impl.LogInBOImpl;
+import lk.weddingexpress.buisness.custom.impl.LogInDetailBOImpl;
+import lk.weddingexpress.buisness.custom.impl.UserBOImpl;
+import lk.weddingexpress.buisness.custom.impl.VendorBOImpl;
 
 public class BOFactory {
+    private  static BOFactory boFactory;
+
     public enum BOTypes{
-        USER,USERDETAIL
+        USER,VENDOR,LOGIN,LOGINDETIAL
     }
 
-    public static BOFactory boFactory;
-
-    private BOFactory(){}
-
     public static BOFactory getInstance(){
-        if (boFactory == null){
+        if(boFactory == null){
             boFactory = new BOFactory();
         }
         return boFactory;
     }
 
-    public SuperBO getBO(BOTypes type) {
-        switch (type) {
+    public SuperBO getBO(BOTypes boTypes){
+        switch (boTypes){
             case USER:
                 return new UserBOImpl();
-            case USERDETAIL:
-                return new UserDetaiImpl();
-            default:
-                return null;
+            case LOGIN:
+                return new LogInBOImpl();
+            case VENDOR:
+                return new VendorBOImpl();
+            case LOGINDETIAL:
+                return new LogInDetailBOImpl();
+                default:return null;
         }
     }
 
