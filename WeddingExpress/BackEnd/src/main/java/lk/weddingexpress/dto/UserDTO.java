@@ -1,11 +1,6 @@
 package lk.weddingexpress.dto;
 
-/**
- * @author lakitha
- */
-
 public class UserDTO {
-
     private int uid;
     private String email;
     private String fullName;
@@ -25,6 +20,11 @@ public class UserDTO {
         this.fullName = fullName;
         this.username = username;
         this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
+
+    public UserDTO(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 

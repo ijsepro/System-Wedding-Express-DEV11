@@ -1958,7 +1958,7 @@ Copyright (c) 2015 Daniel Eden
   animation-name: fadeOutUp;
 }
 
-/* .dropdown-menu {
+.dropdown-menu {
   background-color: #FFFCF5;
   border: 0 none;
   border-radius: 6px;
@@ -2063,7 +2063,7 @@ Copyright (c) 2015 Daniel Eden
 }
 .dropdown-menu.dropdown-danger > li > a:hover, .dropdown-menu.dropdown-danger > li > a:focus {
   background-color: #DD0330;
-} */
+}
 
 .btn-group.select {
   overflow: hidden;
@@ -3013,7 +3013,7 @@ Copyright (c) 2015 Daniel Eden
     display: none;
   }
 
-  /* .navbar-nav > li > .dropdown-menu,
+  .navbar-nav > li > .dropdown-menu,
   .dropdown .dropdown-menu {
     transform: translate3d(0px, -40px, 0px);
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) 0s, opacity 0.3s ease 0s, height 0s linear 0.35s;
@@ -3053,7 +3053,7 @@ Copyright (c) 2015 Daniel Eden
   .navbar-nav.navbar-left > li > .dropdown-menu:after {
     right: auto;
     left: 12px;
-  } */
+  }
 
   .navbar .navbar-header {
     margin-left: 10px;
