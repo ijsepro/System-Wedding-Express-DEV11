@@ -16,60 +16,60 @@ import java.util.List;
 /**
  * Created by Thilini Hansika on 5/1/2018.
  */
-public class UserDetaiImpl implements UserDetailBO{
+public class UserDetaiImpl implements UserDetailBO {
 
     private UserDetaiRepository userDetaiRepository;
     private UserRepository userRepository;
 
 
-
-    public UserDetaiImpl(){
-        userDetaiRepository= (UserDetaiRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USERDETAIL);
-        userRepository= (UserRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USER);
+    public UserDetaiImpl() {
+        userDetaiRepository = (UserDetaiRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USERDETAIL);
+        userRepository = (UserRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USER);
 
     }
 
 
     @Override
     public boolean saveUserDetail(UserDetailsDTO c) throws Exception {
-        boolean result=false;
-        try(Session session= HibernateUtill.getSessionFactory().openSession()){
+        boolean result = false;
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
 
 
-            User user=new User();
-//            user.getUid();
-//            user.getUsername();
-//            user.getFullName();
-//            user.getEmail();
-//            user.getPassword();
-//            user.getPhoneNumber();
+            User user = new User();
 
 
-            user.setUid(c.getUserDTO().getUid());
+
+           user.setUid(c.getUserDTO().getUid());
+           user.setEmail(c.getUserDTO().getEmail());
+//           user.setPhoneNumber(c.getUserDTO().getPhoneNumber());
+           user.setFullName(c.getUserDTO().getFullName());
+           user.setUsername(c.getUserDTO().getUsername());
             userRepository.setSession(session);
-            userRepository.getUsers(user.getEmail());
+            userRepository.save(user);
+            System.out.println("User Search impl" + user.getUid());
 
-         System.out.println("User Search impl"+user);
 
-
-            UserDetail userDetail=new UserDetail();
+            UserDetail userDetail = new UserDetail();
             userDetail.setId(c.getId());
             userDetail.setFullName(c.getFullName());
             userDetail.setUserName(c.getUserName());
             userDetail.setPartenerName(c.getPartenerName());
             userDetail.setEmail(c.getEmail());
             userDetail.setAge(c.getAge());
+            userDetail.setAddress(c.getAddress());
             userDetail.setAboutMe(c.getAboutMe());
 //            userDetail.setUser(user.getUid());
             userDetail.setUser(user);
+
             userDetaiRepository.setSession(session);
 
 
-            result=userDetaiRepository.save(userDetail);
-            System.out.println("UserDetail"+userDetail);
+            result = userDetaiRepository.save(userDetail);
+
+            System.out.println("UserDetail" + userDetail);
             session.getTransaction().commit();
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;

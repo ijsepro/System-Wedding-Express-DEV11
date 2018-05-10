@@ -11,7 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
- 
+  
+  textEmai:String='';
   textDes:string ='';
   textPartner:string='';
   textUser:string='';
@@ -24,6 +25,7 @@ export class UserComponent implements OnInit {
 
   constructor(private service:UserdetailService , fb: FormBuilder) { 
     this.rForm = fb.group({
+      'email' : [null, Validators.required],
       'name' : [null, Validators.required],
       'username' : [null, Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)])],
       'address' : [null, Validators.compose([Validators.required, Validators.minLength(6)])],
@@ -45,12 +47,14 @@ updateUser(UserForm){
     let u={userData:UserForm.value};
     let user={
       id:u.userData.id,
-      aboutMe:u.userData.aboutMe,
+      aboutMe:u.userData.description,
       age:u.userData.age,
       email:u.userData.email,
-      fullName:u.userData.fullName,
-      partenerName:u.userData.partenerName,
-      userName:u.userData.userName,
+      fullName:u.userData.name,
+      address:u.userData.address,
+      partenerName:u.userData.partner,
+      userName:u.userData.username,
+    
      
     };
     this.service.create(user).subscribe(
@@ -64,4 +68,29 @@ updateUser(UserForm){
         else throw error;
        } );
   }
+
+  // searchUser(UserForm){
+  //   let u={userData:UserForm.value};
+  //   let user={
+  //     // id:u.userData.id,
+  //     // aboutMe:u.userData.aboutMe,
+  //     // age:u.userData.age,
+  //     email:u.userData.email,
+  //     // fullName:u.userData.fullName,
+  //     // partenerName:u.userData.partenerName,
+  //     // userName:u.userData.userName,
+    
+     
+  //   };
+  //   this.service.search(user).subscribe(
+  //     newUser=>{
+  //       console.log(newUser);
+  //     },
+  //     (error: AppError) => {
+  //       if(error instanceof NotFoundError){
+  //         alert("Not found requested data...");
+  //       }
+  //       else throw error;
+  //      } );
+  // }
 }

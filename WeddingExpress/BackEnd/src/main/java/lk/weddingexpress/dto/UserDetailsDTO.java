@@ -10,6 +10,7 @@ public class UserDetailsDTO {
     private String partenerName;
     private  String email;
     private String age;
+    private String address;
     private String aboutMe;
     private UserDTO userDTO;
 
@@ -20,13 +21,14 @@ public class UserDetailsDTO {
         Id = id;
     }
 
-    public UserDetailsDTO(int id, String fullName, String userName, String partenerName, String email, String age, String aboutMe, UserDTO userDTO) {
+    public UserDetailsDTO(int id, String fullName, String userName, String partenerName, String email, String age, String address, String aboutMe, UserDTO userDTO) {
         Id = id;
         this.fullName = fullName;
         this.userName = userName;
         this.partenerName = partenerName;
         this.email = email;
         this.age = age;
+        this.address = address;
         this.aboutMe = aboutMe;
         this.userDTO = userDTO;
     }
@@ -79,6 +81,14 @@ public class UserDetailsDTO {
         this.age = age;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getAboutMe() {
         return aboutMe;
     }
@@ -104,8 +114,9 @@ public class UserDetailsDTO {
                 ", partenerName='" + partenerName + '\'' +
                 ", email='" + email + '\'' +
                 ", age='" + age + '\'' +
+                ", address='" + address + '\'' +
                 ", aboutMe='" + aboutMe + '\'' +
-                ", userDetailsDTO=" + userDTO +
+                ", userDTO=" + userDTO +
                 '}';
     }
 }

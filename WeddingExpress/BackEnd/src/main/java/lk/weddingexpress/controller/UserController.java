@@ -10,6 +10,7 @@ import lk.weddingexpress.business.custom.UserDetailBO;
 import lk.weddingexpress.dto.UserDTO;
 import lk.weddingexpress.dto.UserDetailsDTO;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -33,5 +34,12 @@ public class UserController {
         return userBo.save(userDTO);
     }
 
+    @GET
+    @Path("check")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserDTO getUsers(String email){
+        System.out.println(""+email);
+        return  userBo.getUsers(email);
+    }
 
 }

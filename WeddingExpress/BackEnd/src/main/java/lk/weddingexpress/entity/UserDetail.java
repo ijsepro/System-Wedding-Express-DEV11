@@ -18,6 +18,7 @@ public class UserDetail {
     private String partenerName;
     private String email;
     private String age;
+    private String address;
     private String aboutMe;
 
 
@@ -26,12 +27,13 @@ public class UserDetail {
 
     public UserDetail(){}
 
-    public UserDetail(String fullName, String userName, String partenerName, String email, String age, String aboutMe, User user) {
+    public UserDetail(String fullName, String userName, String partenerName, String email, String age, String address, String aboutMe, User user) {
         this.fullName = fullName;
         this.userName = userName;
         this.partenerName = partenerName;
         this.email = email;
         this.age = age;
+        this.address = address;
         this.aboutMe = aboutMe;
         this.user = user;
     }
@@ -84,6 +86,14 @@ public class UserDetail {
         this.age = age;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getAboutMe() {
         return aboutMe;
     }
@@ -109,6 +119,7 @@ public class UserDetail {
                 ", partenerName='" + partenerName + '\'' +
                 ", email='" + email + '\'' +
                 ", age='" + age + '\'' +
+                ", address='" + address + '\'' +
                 ", aboutMe='" + aboutMe + '\'' +
                 ", user=" + user +
                 '}';

@@ -46,22 +46,22 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public List<UserDTO> getAll() throws Exception {
+    public List<UserDTO> getAll()  {
         return null;
     }
 
     @Override
-    public boolean update(UserDTO userDTO) throws Exception {
+    public boolean update(UserDTO userDTO)  {
         return false;
     }
 
     @Override
-    public UserDTO getUsers(String email) throws Exception {
+    public UserDTO getUsers(String email)  {
      try   (Session session=HibernateUtill.getSessionFactory().openSession()) {
          userRepository.setSession(session);
          session.beginTransaction();
 
-         User user = (User) session.createQuery("select * from user where email='" + email + "'").list().get(0);
+         User user = (User) session.createQuery("select * from user where email='" + email + "'");
          UserDTO userDTO = new UserDTO();
          userDTO.setUid(user.getUid());
          userDTO.setEmail(user.getEmail());

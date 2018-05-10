@@ -6,6 +6,7 @@ package lk.weddingexpress.repository;
 
 import org.hibernate.Session;
 
+import javax.persistence.Id;
 import java.util.List;
 
 public interface SuperRepository <T, ID> {
@@ -20,6 +21,6 @@ public interface SuperRepository <T, ID> {
 
     public T findById(ID id)throws Exception;
 
-    public T getUsers(String id)throws Exception;
+//    public T getUsers(String id)throws Exception;
 
 }

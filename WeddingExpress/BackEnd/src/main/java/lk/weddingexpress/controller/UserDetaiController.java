@@ -17,13 +17,16 @@ public class UserDetaiController{
 
     private UserDetailBO userDetailBO;
 
+
     public  UserDetaiController(){
         userDetailBO= (UserDetailBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.USERDETAIL);
     }
     @POST
     @Path("crt")
     @Produces(MediaType.APPLICATION_JSON)
+
     public boolean createUserDetai(UserDetailsDTO userDetailsDTO)throws Exception{
         return userDetailBO.saveUserDetail(userDetailsDTO);
     }
+//    public UserD getUsers(String emai)
 }

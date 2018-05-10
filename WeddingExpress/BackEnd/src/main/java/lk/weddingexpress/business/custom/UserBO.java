@@ -13,9 +13,9 @@ public interface UserBO extends SuperBO{
 
     public boolean save(UserDTO userDTO);
 
-    public List<UserDTO> getAll() throws Exception;
+    public List<UserDTO> getAll() ;
 
-    public boolean update(UserDTO userDTO) throws Exception;
+    public boolean update(UserDTO userDTO);
 
-    public UserDTO getUsers(String email)throws Exception;
+    public UserDTO getUsers(String email);
 }
