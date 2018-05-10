@@ -11,13 +11,13 @@ import lk.weddingexpress.repository.RepositoryFactory;
 import lk.weddingexpress.repository.custom.UserRepository;
 import lk.weddingexpress.resources.HibernateUtill;
 import org.hibernate.Session;
-import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import java.util.List;
 
 public class UserBOImpl implements UserBO {
 
     private UserRepository userRepository;
+
 
     public UserBOImpl(){
 
@@ -31,15 +31,11 @@ public class UserBOImpl implements UserBO {
         try(Session session = HibernateUtill.getSessionFactory().openSession()){
             userRepository.setSession(session);
             session.beginTransaction();
-
-            StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
-            String encryptedPassword = passwordEncryptor.encryptPassword(u.getPassword());
-
             User user=new User();
             user.setEmail(u.getEmail());
             user.setFullName(u.getFullName());
             user.setPhoneNumber(u.getPhoneNumber());
-            user.setPassword(encryptedPassword);
+            user.setPassword(u.getPassword());
             user.setUsername(u.getUsername());
             result = userRepository.save(user);
             session.getTransaction().commit();
@@ -50,12 +46,35 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public List<UserDTO> getAll() throws Exception {
+    public List<UserDTO> getAll()  {
         return null;
     }
 
     @Override
-    public boolean update(UserDTO userDTO) throws Exception {
+    public boolean update(UserDTO userDTO)  {
         return false;
+    }
+
+    @Override
+    public UserDTO getUsers(String email)  {
+     try   (Session session=HibernateUtill.getSessionFactory().openSession()) {
+         userRepository.setSession(session);
+         session.beginTransaction();
+
+         User user = (User) session.createQuery("select * from user where email='" + email + "'");
+         UserDTO userDTO = new UserDTO();
+         userDTO.setUid(user.getUid());
+         userDTO.setEmail(user.getEmail());
+         userDTO.setFullName(user.getFullName());
+         userDTO.setPassword(user.getPassword());
+         userDTO.setPhoneNumber(user.getPhoneNumber());
+         session.getTransaction().commit();
+         System.out.println("User Search" + userDTO);
+         return userDTO;
+     }   catch (Exception e) {
+        e.printStackTrace();
+        return null;
+
+        }
     }
 }

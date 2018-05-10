@@ -39,4 +39,14 @@ public class SuperRepositoryImpl <T, ID extends Serializable> implements SuperRe
     public void update(T t) throws Exception {
 
     }
+
+    @Override
+    public T findById(ID id) throws Exception {
+        return session.get(entityClass,id);
+    }
+
+//    @Override
+//    public T getUsers(String id) throws Exception {
+//        return session.get(entityClass,id);
+//    }
 }

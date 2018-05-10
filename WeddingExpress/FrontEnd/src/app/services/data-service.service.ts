@@ -19,6 +19,16 @@ export class DataServiceService {
      .map(response => response.json())   
      .catch(this.handleError);
   }
+  search(resource){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.URL + '/check' , JSON.stringify(resource), options)
+    .map(response => response.json())
+    .catch(this.handleError);
+
+  }
 
   create(resource){
     let headers = new Headers({ 'Content-Type': 'application/json' });
@@ -29,6 +39,15 @@ export class DataServiceService {
     .map(response => response.json())
     .catch(this.handleError);
   }
+  // updateUserDetail(userdetail){
+  //   let headers = new Headers({ 'Content-Type': 'application/json' });
+  //   headers.append('Accept', 'application/json');
+  //   let options = new RequestOptions({ headers: headers });
+
+  //   return this.http.post(this.URL + '/add' , JSON.stringify(userdetail), options)
+  //   .map(response => response.json())
+  //   .catch(this.handleError);
+  // }
 
   update(resource){
     let headers = new Headers({ 'Content-Type': 'application/json' });

@@ -5,13 +5,16 @@ package lk.weddingexpress.business;
  */
 
 import lk.weddingexpress.business.custom.impl.UserBOImpl;
+import lk.weddingexpress.business.custom.impl.UserDetaiImpl;
 
 public class BOFactory {
     public enum BOTypes{
-        USER
+        USER,USERDETAIL
     }
 
-    private static BOFactory boFactory;
+    public static BOFactory boFactory;
+
+    private BOFactory(){}
 
     public static BOFactory getInstance(){
         if (boFactory == null){
@@ -24,6 +27,8 @@ public class BOFactory {
         switch (type) {
             case USER:
                 return new UserBOImpl();
+            case USERDETAIL:
+                return new UserDetaiImpl();
             default:
                 return null;
         }
