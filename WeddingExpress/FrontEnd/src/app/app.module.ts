@@ -1,3 +1,4 @@
+import { ApponimentService } from './services/apponiment.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,8 +9,9 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FormsModule }   from '@angular/forms';
-import { CustomFormsModule } from 'ng2-validation';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatInputModule , MatNativeDateModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -18,10 +20,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
-import { LogInServiceService } from './services/login.service.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
-import { FormBuilderModule } from "angular-form-builder";
-import { ReactiveFormsModule } from '@angular/forms';
+import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
+import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
+import { VendorDashboardComponent } from './business/vendor-dashboard/vendor-dashboard.component';
+import { FooterComponent } from './footer/footer.component';
+import { AppoinmentComponent } from './candidate/appoinment/appoinment.component';
 
 
 @NgModule({
@@ -32,12 +36,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
-   
+    DashboardComponent,
+    UserDashboardComponent,
+    BudgetCalculatorComponent,
+    VendorDashboardComponent,
+    FooterComponent,
+    AppoinmentComponent
+  ],
+  entryComponents: [
+    AppoinmentComponent
   ],
   imports: [
-    ReactiveFormsModule,
-    FormBuilderModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -46,18 +55,23 @@ import { ReactiveFormsModule } from '@angular/forms';
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'signup', component: SignupComponent}
-      
+      {path: 'signup', component: SignupComponent},
+      {path: 'user-dashboard', component: UserDashboardComponent},
+      {path: 'budget-cal', component: BudgetCalculatorComponent},
 
     ]),
     NgbModule.forRoot(),
     HttpModule,
     FormsModule,
-    CustomFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule, MatButtonModule, MatDialogModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatNativeDateModule,
+    MatInputModule 
   ],
   providers: [
     SignupServiceService,
-    LogInServiceService,
+    ApponimentService,
+    { provide: ApponimentService, useClass: ApponimentService},
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]

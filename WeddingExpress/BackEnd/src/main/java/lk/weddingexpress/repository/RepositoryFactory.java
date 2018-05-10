@@ -1,20 +1,22 @@
 package lk.weddingexpress.repository;
 
-import lk.weddingexpress.repository.custom.impl.LogInDetailRepositoryImpl;
-import lk.weddingexpress.repository.custom.impl.LogInRepositoryImpl;
+/**
+ * @author lakitha
+ */
+
 import lk.weddingexpress.repository.custom.impl.UserRepositoryImpl;
-import lk.weddingexpress.repository.custom.impl.VendorRepositoryImpl;
 
 public class RepositoryFactory {
 
     public enum RepositoryTypes{
-        USER,VENDOR,LOGIN,LOGINDETAIL
+        USER
     }
 
     public static RepositoryFactory repositoryFactory;
 
     public RepositoryFactory() {
     }
+
     public static RepositoryFactory getInstance(){
         if(repositoryFactory==null){
             repositoryFactory=new RepositoryFactory();
@@ -23,16 +25,12 @@ public class RepositoryFactory {
     }
 
     public SuperRepository getRepository(RepositoryTypes repositoryTypes){
-        switch (repositoryTypes){
+        switch(repositoryTypes){
             case USER:
                 return new UserRepositoryImpl();
-            case LOGIN:
-                return new LogInRepositoryImpl();
-            case VENDOR:
-                return new VendorRepositoryImpl();
-            case LOGINDETAIL:
-                return new LogInDetailRepositoryImpl();
-                default:return null;
+            default:
+                return null;
         }
     }
+
 }
