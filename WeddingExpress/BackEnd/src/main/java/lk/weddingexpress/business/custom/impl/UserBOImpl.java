@@ -1,11 +1,11 @@
-package lk.weddingexpress.buisness.custom.impl;
+package lk.weddingexpress.business.custom.impl;
 
-import lk.weddingexpress.buisness.custom.UserBO;
+import lk.weddingexpress.business.custom.UserBO;
 import lk.weddingexpress.dto.UserDTO;
 import lk.weddingexpress.entity.User;
 import lk.weddingexpress.repository.RepositoryFactory;
 import lk.weddingexpress.repository.custom.UserRepository;
-import lk.weddingexpress.resources.HibernateUtil;
+import lk.weddingexpress.resources.HibernateUtill;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class UserBOImpl implements UserBO {
     @Override
     public boolean save(UserDTO userDTO) {
         boolean result = false;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
             userRepository.setSession(session);
             session.beginTransaction();
 
@@ -44,7 +44,7 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public List<UserDTO> getAll() throws Exception {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
             userRepository.setSession(session);
             session.beginTransaction();
 
@@ -72,7 +72,7 @@ public class UserBOImpl implements UserBO {
     @Override
     public UserDTO search(String email) {
 
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
             System.out.println("Bo: check1" + email);
             userRepository.setSession(session);
             session.beginTransaction();

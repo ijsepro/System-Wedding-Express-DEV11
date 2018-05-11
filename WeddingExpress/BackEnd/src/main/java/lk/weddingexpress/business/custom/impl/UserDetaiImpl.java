@@ -23,9 +23,8 @@ public class UserDetaiImpl implements UserDetailBO {
 
 
     public UserDetaiImpl() {
-        userDetaiRepository = (UserDetaiRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USERDETAIL);
+        userDetaiRepository = (UserDetaiRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USERDETAILS);
         userRepository = (UserRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.USER);
-
     }
 
 
@@ -34,10 +33,7 @@ public class UserDetaiImpl implements UserDetailBO {
         boolean result = false;
         try (Session session = HibernateUtill.getSessionFactory().openSession()) {
 
-
             User user = new User();
-
-
 
            user.setUid(c.getUserDTO().getUid());
            user.setEmail(c.getUserDTO().getEmail());

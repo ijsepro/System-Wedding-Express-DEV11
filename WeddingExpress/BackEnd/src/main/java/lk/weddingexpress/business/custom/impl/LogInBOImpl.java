@@ -1,11 +1,11 @@
-package lk.weddingexpress.buisness.custom.impl;
+package lk.weddingexpress.business.custom.impl;
 
-import lk.weddingexpress.buisness.custom.LogInBO;
+import lk.weddingexpress.business.custom.LogInBO;
 import lk.weddingexpress.dto.LogInDTO;
 import lk.weddingexpress.entity.LogIn;
 import lk.weddingexpress.repository.RepositoryFactory;
 import lk.weddingexpress.repository.custom.LogInRepository;
-import lk.weddingexpress.resources.HibernateUtil;
+import lk.weddingexpress.resources.HibernateUtill;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class LogInBOImpl implements LogInBO {
     public boolean saveLogIn(LogInDTO logInDTO) {
         boolean result = false;
 
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try(Session session = HibernateUtill.getSessionFactory().openSession()){
             logInRepository.setSession(session);
             session.beginTransaction();
 
@@ -45,7 +45,7 @@ public class LogInBOImpl implements LogInBO {
     @Override
     public List<LogInDTO> getAll() throws Exception {
 
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
             logInRepository.setSession(session);
             session.beginTransaction();
 

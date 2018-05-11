@@ -1,7 +1,7 @@
 package lk.weddingexpress.controller;
 
-import lk.weddingexpress.buisness.BOFactory;
-import lk.weddingexpress.buisness.custom.LogInDetailBO;
+import lk.weddingexpress.business.BOFactory;
+import lk.weddingexpress.business.custom.LogInDetailBO;
 import lk.weddingexpress.dto.LogInDetailDTO;
 
 import javax.ws.rs.*;

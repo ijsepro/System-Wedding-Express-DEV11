@@ -1,5 +1,9 @@
 package lk.weddingexpress.entity;
 
+/**
+ * @author lakitha
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +11,7 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int uid;
@@ -16,28 +21,14 @@ public class User {
     private String phoneNumber;
     private String password;
 
-    public User() {}
-
-
-    public User(int uid) {
-        this.uid = uid;
+    public User() {
     }
 
-    public User(String email) {
-        this.email = email;
-    }
-
-    public User(int uid, String email, String fullName, String username, String phoneNumber, String password) {
-        this.uid = uid;
+    public User(String email, String fullName, String username, String phoneNumber, String password) {
         this.email = email;
         this.fullName = fullName;
         this.username = username;
         this.phoneNumber = phoneNumber;
-        this.password = password;
-    }
-
-    public User(String email, String password) {
-        this.email = email;
         this.password = password;
     }
 
@@ -89,4 +80,15 @@ public class User {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", email='" + email + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", username='" + username + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }

@@ -1,15 +1,13 @@
-package lk.weddingexpress.buisness;
+package lk.weddingexpress.business;
 
-import lk.weddingexpress.buisness.custom.impl.LogInBOImpl;
-import lk.weddingexpress.buisness.custom.impl.LogInDetailBOImpl;
-import lk.weddingexpress.buisness.custom.impl.UserBOImpl;
-import lk.weddingexpress.buisness.custom.impl.VendorBOImpl;
+
+import lk.weddingexpress.business.custom.impl.*;
 
 public class BOFactory {
     private  static BOFactory boFactory;
 
     public enum BOTypes{
-        USER,VENDOR,LOGIN,LOGINDETIAL
+        USER,VENDOR,LOGIN,LOGINDETIAL, USERDETAIL
     }
 
     public static BOFactory getInstance(){
@@ -23,6 +21,8 @@ public class BOFactory {
         switch (boTypes){
             case USER:
                 return new UserBOImpl();
+            case USERDETAIL:
+                return new UserDetaiImpl();
             case LOGIN:
                 return new LogInBOImpl();
             case VENDOR:

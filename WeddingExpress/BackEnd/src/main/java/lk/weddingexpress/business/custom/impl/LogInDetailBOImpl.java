@@ -1,6 +1,7 @@
-package lk.weddingexpress.buisness.custom.impl;
+package lk.weddingexpress.business.custom.impl;
 
-import lk.weddingexpress.buisness.custom.LogInDetailBO;
+
+import lk.weddingexpress.business.custom.LogInDetailBO;
 import lk.weddingexpress.dto.LogInDetailDTO;
 
 import java.util.List;

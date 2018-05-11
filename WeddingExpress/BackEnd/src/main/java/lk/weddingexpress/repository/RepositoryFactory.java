@@ -2,13 +2,14 @@ package lk.weddingexpress.repository;
 
 import lk.weddingexpress.repository.custom.impl.LogInDetailRepositoryImpl;
 import lk.weddingexpress.repository.custom.impl.LogInRepositoryImpl;
+import lk.weddingexpress.repository.custom.impl.UserDetailRepositoryImpl;
 import lk.weddingexpress.repository.custom.impl.UserRepositoryImpl;
 import lk.weddingexpress.repository.custom.impl.VendorRepositoryImpl;
 
 public class RepositoryFactory {
 
     public enum RepositoryTypes{
-        USER,VENDOR,LOGIN,LOGINDETAIL
+        USER,VENDOR,LOGIN,LOGINDETAIL, USERDETAILS
     }
 
     public static RepositoryFactory repositoryFactory;
@@ -26,6 +27,8 @@ public class RepositoryFactory {
         switch (repositoryTypes){
             case USER:
                 return new UserRepositoryImpl();
+            case USERDETAILS:
+                return new UserDetailRepositoryImpl();
             case LOGIN:
                 return new LogInRepositoryImpl();
             case VENDOR:

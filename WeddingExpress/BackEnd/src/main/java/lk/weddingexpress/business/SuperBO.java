@@ -1,4 +1,8 @@
-package lk.weddingexpress.buisness;
+package lk.weddingexpress.business;
+
+/**
+ * @author lakitha
+ */
 
 public interface SuperBO {
 }

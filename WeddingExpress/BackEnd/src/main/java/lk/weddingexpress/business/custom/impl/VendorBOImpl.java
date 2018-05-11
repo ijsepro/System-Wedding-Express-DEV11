@@ -1,11 +1,11 @@
-package lk.weddingexpress.buisness.custom.impl;
+package lk.weddingexpress.business.custom.impl;
 
-import lk.weddingexpress.buisness.custom.VendorBO;
+import lk.weddingexpress.business.custom.VendorBO;
 import lk.weddingexpress.dto.VendorDTO;
 import lk.weddingexpress.entity.Vendor;
 import lk.weddingexpress.repository.RepositoryFactory;
 import lk.weddingexpress.repository.custom.VendorRepository;
-import lk.weddingexpress.resources.HibernateUtil;
+import lk.weddingexpress.resources.HibernateUtill;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class VendorBOImpl implements VendorBO {
     public boolean saveVendor(VendorDTO vendorDTO) {
         boolean result = false;
 
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try(Session session = HibernateUtill.getSessionFactory().openSession()){
             vendorRepository.setSession(session);
             session.beginTransaction();
 
@@ -44,7 +44,7 @@ public class VendorBOImpl implements VendorBO {
 
     @Override
     public List<VendorDTO> getAll() throws Exception {
-        try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try(Session session = HibernateUtill.getSessionFactory().openSession()) {
             vendorRepository.setSession(session);
             session.beginTransaction();
 
