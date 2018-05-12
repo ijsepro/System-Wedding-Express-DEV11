@@ -55,6 +55,16 @@ export class DataServiceService {
     .catch(this.handleError);
   }
 
+  authVendor(resource){  
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.URL + '/auth-vendor' , JSON.stringify(resource), options)
+    .map(response => response.json()) 
+    .catch(this.handleError);
+  }
+
   private handleError(error: Response){
     if (error.status === 404){
         console.log(error.status);

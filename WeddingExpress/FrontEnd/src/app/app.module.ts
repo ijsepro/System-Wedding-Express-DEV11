@@ -22,12 +22,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SignupServiceService } from './services/signup-service.service';
+import { VendorServiceService } from './services/vendor.service';
 import { DashboardComponent } from './candidate/dashboard/dashboard.component';
 import { UserDashboardComponent } from './candidate/user-dashboard/user-dashboard.component';
 import { BudgetCalculatorComponent } from './candidate/budget-calculator/budget-calculator.component';
 import { VendorDashboardComponent } from './business/vendor-dashboard/vendor-dashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppoinmentComponent } from './candidate/appoinment/appoinment.component';
+import { VendorLoginComponent } from './business/vendor-login/vendor-login.component';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { AppoinmentComponent } from './candidate/appoinment/appoinment.component
     BudgetCalculatorComponent,
     VendorDashboardComponent,
     FooterComponent,
-    AppoinmentComponent
+    AppoinmentComponent,
+    VendorLoginComponent
   ],
   entryComponents: [
     AppoinmentComponent
@@ -60,6 +63,7 @@ import { AppoinmentComponent } from './candidate/appoinment/appoinment.component
       {path: 'signup', component: SignupComponent},
       {path: 'user-dashboard', component: UserDashboardComponent},
       {path: 'budget-cal', component: BudgetCalculatorComponent},
+      {path: 'vendor-login', component: VendorLoginComponent},
 
     ]),
     NgbModule.forRoot(),
@@ -75,6 +79,7 @@ import { AppoinmentComponent } from './candidate/appoinment/appoinment.component
     LogInServiceService,
     UserdetailService,
     ApponimentService,
+    VendorServiceService,
     { provide: ApponimentService, useClass: ApponimentService},
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],

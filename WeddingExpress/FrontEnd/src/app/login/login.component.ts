@@ -8,6 +8,7 @@ import { AppError } from './../common/app-error';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   password:string ='';
   titleAlert:string = 'This field is required';
 
-  constructor(private afAuth: AngularFireAuth, private service: LogInServiceService ,private fb: FormBuilder) { 
+  constructor(private afAuth: AngularFireAuth, private service: LogInServiceService ,private fb: FormBuilder, private router: Router) { 
     this.userForm = fb.group({
       'email' : [null, Validators.required],
       'password' : [null, Validators.required]
@@ -59,6 +60,12 @@ export class LoginComponent implements OnInit {
      .subscribe(
        response=>{
        console.log(response);
+       if(response){
+        console.log("aawa");
+         this.router.navigate(['/user-dashboard']);
+      }else{
+       this.router.navigate(['/no-access']);
+      }
      },
      
       (error: AppError) => {       
