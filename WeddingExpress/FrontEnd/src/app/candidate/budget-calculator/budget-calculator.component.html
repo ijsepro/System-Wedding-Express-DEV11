@@ -1,3 +1,11 @@
+
+<div>
+  <label style="font-size: 40px ;margin-left: 30%">Welocme to Your Budgeter</label>
+  <p style="margin-left: 30%">
+    Keep Track Of Your spending and total budget throughout planning
+  </p>
+<img style="margin-left:65%; margin-top: -10% " src="assets\img\faces\1.png">
+</div>
 <div class="example-container mat-elevation-z8">
   <div class="example-header">
     <mat-form-field>
@@ -16,7 +24,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef> RECOMENDED </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}}<img src="\assets\img\faces\percent.png"> </mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
@@ -28,8 +36,10 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="symbol">
      
-       <mat-header-cell *matHeaderCellDef>  <img src="\assets\img\d.png"> </mat-header-cell> 
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+       <mat-header-cell *matHeaderCellDef> REMOVE IT </mat-header-cell> 
+      <mat-cell *matCellDef="let element"  > 
+      <img src="\assets\img\d.png"  >
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
