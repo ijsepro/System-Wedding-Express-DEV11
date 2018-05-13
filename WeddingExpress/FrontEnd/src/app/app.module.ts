@@ -15,11 +15,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatCardModule, MatDatepickerModule, MatFormFieldModule, MatInputModule , MatNativeDateModule} from '@angular/material';
 
-import { CommonModule } from '@angular/common';
-// import { MatTableModule, MatToolbarModule } from '@angular/material';
-
-
-
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { UserComponent } from './candidate/user/user.component';
@@ -36,7 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppoinmentComponent } from './candidate/appoinment/appoinment.component';
 import { VendorLoginComponent } from './business/vendor-login/vendor-login.component';
 
-import {MatTableModule} from '@angular/material/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,18 +46,12 @@ import {MatTableModule} from '@angular/material/table';
     VendorDashboardComponent,
     FooterComponent,
     AppoinmentComponent,
-    
     VendorLoginComponent
   ],
-  // imports: [],
-  exports: [CommonModule, MatInputModule, MatTableModule],
   entryComponents: [
     AppoinmentComponent
   ],
   imports: [
-    CommonModule, 
-    MatInputModule,
-    MatTableModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -75,6 +64,7 @@ import {MatTableModule} from '@angular/material/table';
       {path: 'user-dashboard', component: UserDashboardComponent},
       {path: 'budget-cal', component: BudgetCalculatorComponent},
       {path: 'vendor-login', component: VendorLoginComponent},
+      {path: 'vendor-dashboard', component: VendorDashboardComponent},
 
     ]),
     NgbModule.forRoot(),
@@ -97,4 +87,3 @@ import {MatTableModule} from '@angular/material/table';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-// export class MaterialModule { }

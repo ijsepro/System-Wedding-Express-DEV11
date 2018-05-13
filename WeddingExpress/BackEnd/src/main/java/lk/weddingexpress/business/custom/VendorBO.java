@@ -10,4 +10,7 @@ public interface VendorBO extends SuperBO {
 
     public List<VendorDTO> getAll() throws Exception;
 
+
+    public VendorDTO search(String email)throws Exception;
+
 }

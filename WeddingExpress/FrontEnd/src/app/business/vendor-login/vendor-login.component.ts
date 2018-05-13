@@ -21,7 +21,7 @@ export class VendorLoginComponent implements OnInit {
 
   vendorForm: FormGroup;
 
-  constructor(private afAuth: AngularFireAuth, private service: VendorServiceService ,private fb: FormBuilder) { 
+  constructor(private afAuth: AngularFireAuth, private service: VendorServiceService ,private fb: FormBuilder, private router: Router) { 
     this.vendorForm = fb.group({
       'email1' : [null, Validators.required],
       'password1' : [null, Validators.required]
@@ -57,6 +57,12 @@ export class VendorLoginComponent implements OnInit {
      .subscribe(
        response=>{
        console.log(response);
+       if(response){
+        console.log("aawa");
+         this.router.navigate(['/vendor-dashboard']);
+      }else{
+       this.router.navigate(['/no-access']);
+      }
      },
      
       (error: AppError) => {       

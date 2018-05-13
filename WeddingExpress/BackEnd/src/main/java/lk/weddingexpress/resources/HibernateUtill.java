@@ -5,6 +5,7 @@ package lk.weddingexpress.resources;
  */
 
 import lk.weddingexpress.entity.User;
+import lk.weddingexpress.entity.Vendor;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
@@ -22,12 +23,13 @@ public class HibernateUtill {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
             // config file.
-            File hibernateProperties = new File("D:\\Wedding Express v 0.0.1\\backend\\settings\\hibernate.properties");
+            File hibernateProperties = new File("E:\\test4\\BackEnd\\settings\\hibernate.properties");
             registry = new StandardServiceRegistryBuilder().loadProperties(hibernateProperties).build();
 
             // (2)
             sessionFactory = new MetadataSources(registry)
                     .addAnnotatedClass(User.class)
+                    .addAnnotatedClass(Vendor.class)
                     .buildMetadata().buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);

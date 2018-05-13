@@ -1,5 +1,6 @@
 package lk.weddingexpress.business.custom.impl;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import lk.weddingexpress.business.custom.VendorBO;
 import lk.weddingexpress.dto.VendorDTO;
 import lk.weddingexpress.entity.Vendor;
@@ -15,7 +16,8 @@ public class VendorBOImpl implements VendorBO {
     private VendorRepository vendorRepository;
 
     public VendorBOImpl(){
-        vendorRepository = (VendorRepository) RepositoryFactory.repositoryFactory.getRepository(RepositoryFactory.RepositoryTypes.VENDOR);
+        vendorRepository = (VendorRepository) RepositoryFactory.getInstance().getRepository(RepositoryFactory.RepositoryTypes.VENDOR);
+
     }
 
     @Override
@@ -66,5 +68,47 @@ public class VendorBOImpl implements VendorBO {
                 return null;
             }
         }
+    }
+
+    @Override
+    public VendorDTO search(String email) throws Exception {
+        try (Session session = HibernateUtill.getSessionFactory().openSession()) {
+            System.out.println("Bo: check1 vendor" + email);
+            vendorRepository.setSession(session);
+            session.beginTransaction();
+
+
+            List<Vendor> vendor = (List<Vendor>) session.createQuery("From Vendor where email ='" + email + "'").list();
+            for (Vendor vendors : vendor
+                    ) {
+                if (vendors != null) {
+                    if (vendors != null) {
+                        VendorDTO vendorDTO = new VendorDTO();
+
+                        vendorDTO.setVid(vendors.getVid());
+                        vendorDTO.setVname(vendors.getVname());
+                        vendorDTO.setEmail(vendors.getEmail());
+                        vendorDTO.setAddress(vendors.getAddress());
+                        vendorDTO.setPassword(vendors.getPassword());
+                        vendorDTO.setCompany(vendors.getCompany());
+
+                        return vendorDTO;
+                    } else {
+                        return null;
+                    }
+                } else {
+                    return null;
+                }
+            }
+            System.out.println("run query vendor");
+            System.out.println(vendor);
+            session.getTransaction().commit();
+            return new VendorDTO();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+
     }
 }

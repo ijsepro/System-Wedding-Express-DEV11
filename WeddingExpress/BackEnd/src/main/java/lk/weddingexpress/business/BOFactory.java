@@ -21,12 +21,12 @@ public class BOFactory {
         switch (boTypes){
             case USER:
                 return new UserBOImpl();
+            case VENDOR:
+                return new VendorBOImpl();
             case USERDETAIL:
                 return new UserDetaiImpl();
             case LOGIN:
                 return new LogInBOImpl();
-            case VENDOR:
-                return new VendorBOImpl();
             case LOGINDETIAL:
                 return new LogInDetailBOImpl();
                 default:return null;
