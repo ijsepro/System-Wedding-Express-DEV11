@@ -31,7 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AppoinmentComponent } from './candidate/appoinment/appoinment.component';
 import { VendorLoginComponent } from './business/vendor-login/vendor-login.component';
 
-
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,12 +47,15 @@ import { VendorLoginComponent } from './business/vendor-login/vendor-login.compo
     FooterComponent,
     AppoinmentComponent,
     VendorLoginComponent
+
   ],
+  exports: [ MatTableModule],
   entryComponents: [
     AppoinmentComponent
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -67,6 +70,7 @@ import { VendorLoginComponent } from './business/vendor-login/vendor-login.compo
       {path: 'vendor-dashboard', component: VendorDashboardComponent},
 
     ]),
+    
     NgbModule.forRoot(),
     HttpModule,
     FormsModule,
