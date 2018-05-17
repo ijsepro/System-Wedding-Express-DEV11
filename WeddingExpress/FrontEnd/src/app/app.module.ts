@@ -32,6 +32,7 @@ import { AppoinmentComponent } from './candidate/appoinment/appoinment.component
 import { VendorLoginComponent } from './business/vendor-login/vendor-login.component';
 
 import {MatTableModule} from '@angular/material/table';
+import { AccSettingsComponent } from './candidate/acc-settings/acc-settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,12 +47,14 @@ import {MatTableModule} from '@angular/material/table';
     VendorDashboardComponent,
     FooterComponent,
     AppoinmentComponent,
-    VendorLoginComponent
+    VendorLoginComponent,
+    AccSettingsComponent
 
   ],
-  exports: [ MatTableModule],
+  exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
   entryComponents: [
-    AppoinmentComponent
+    AppoinmentComponent,
+    AccSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import {MatTableModule} from '@angular/material/table';
       {path: 'budget-cal', component: BudgetCalculatorComponent},
       {path: 'vendor-login', component: VendorLoginComponent},
       {path: 'vendor-dashboard', component: VendorDashboardComponent},
+      {path: 'acc-settings', component: AccSettingsComponent},
 
     ]),
     
