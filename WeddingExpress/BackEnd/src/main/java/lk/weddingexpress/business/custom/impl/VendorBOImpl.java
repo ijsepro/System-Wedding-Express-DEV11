@@ -21,6 +21,32 @@ public class VendorBOImpl implements VendorBO {
     }
 
     @Override
+    public boolean register(VendorDTO vendorDTO) throws Exception {
+        boolean result = false;
+
+        try(Session session = HibernateUtill.getSessionFactory().openSession()){
+            vendorRepository.setSession(session);
+            session.beginTransaction();
+
+            Vendor vendor = new Vendor();
+            vendor.setVid(vendorDTO.getVid());
+            vendor.setVname(vendorDTO.getVname());
+            vendor.setAddress(vendorDTO.getAddress());
+            vendor.setEmail(vendorDTO.getEmail());
+            vendor.setPassword(vendorDTO.getPassword());
+
+            result = vendorRepository.register(vendor);
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+
+
+    @Override
     public boolean saveVendor(VendorDTO vendorDTO) {
         boolean result = false;
 

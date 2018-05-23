@@ -14,6 +14,7 @@ public class VendorDTO {
     public VendorDTO() {
     }
 
+
     public VendorDTO(int vid) {
         this.vid = vid;
     }
@@ -74,4 +75,7 @@ public class VendorDTO {
     public void setCompany(String company) {
         this.company = company;
     }
+
+
+
 }

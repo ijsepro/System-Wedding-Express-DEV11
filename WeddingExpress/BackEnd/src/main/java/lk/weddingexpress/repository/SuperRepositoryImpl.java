@@ -11,9 +11,15 @@ public  class SuperRepositoryImpl<T ,ID extends Serializable>implements SuperRep
     private Class<T> entityClass;
 
     public SuperRepositoryImpl() {
-        entityClass = (Class<T>)(((ParameterizedType)(this.getClass().getGenericSuperclass())).getActualTypeArguments())[0];
+        entityClass = (Class<T>) (((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments())[0];
         System.out.println(entityClass);
     }
+
+    @Override
+    public boolean register(T t) throws Exception {
+        return (session.merge(t) != null);
+    }
+
 
     @Override
     public void setSession(Session session) throws Exception {

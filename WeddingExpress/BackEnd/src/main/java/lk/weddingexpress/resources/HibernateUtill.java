@@ -23,7 +23,7 @@ public class HibernateUtill {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
             // config file.
-            File hibernateProperties = new File("E:\\test4\\BackEnd\\settings\\hibernate.properties");
+            File hibernateProperties = new File("G:\\Test-Project\\clone--9\\BackEnd\\settings\\hibernate.properties");
             registry = new StandardServiceRegistryBuilder().loadProperties(hibernateProperties).build();
 
             // (2)

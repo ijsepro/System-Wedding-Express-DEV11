@@ -14,9 +14,11 @@ import javax.ws.rs.core.MediaType;
 public class VendorController {
     private VendorBO vendorBO;
 
-    public VendorController(){
+    public VendorController() {
+
         vendorBO = (VendorBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.VENDOR);
     }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -47,4 +49,23 @@ public class VendorController {
         return false;
     }
 
+  /*  @Path("register")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean registerVendor(VendorDTO vendorDTO) {
+        VendorDTO setVendor = new VendorDTO();
+        setVendor.getVid();
+        setVendor.getVname();
+        setVendor.setEmail("ruvini@gmail.com");
+        setVendor.setPassword("sghd");
+        setVendor.setCompany("Hotel Refresh");
+
+return false;
+    }*/
+    @Path("register")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean register(VendorDTO vendorDTO)throws Exception{
+        return vendorBO.register(vendorDTO);
+    }
 }

@@ -14,4 +14,6 @@ public interface SuperRepository<T,ID> {
     public void update(T t) throws Exception;
 
     public boolean search(String query)throws Exception;
+
+   public boolean register(T t) throws Exception;
 }
