@@ -35,6 +35,7 @@ import {MatTableModule} from '@angular/material/table';
 import { AccSettingsComponent } from './candidate/acc-settings/acc-settings.component';
 import { DeleteAccComponent } from './candidate/delete-acc/delete-acc.component';
 import { VendorComponent } from './vendor/vendor.component';
+import { MessageComponent } from './message/message.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import { VendorComponent } from './vendor/vendor.component';
     VendorLoginComponent,
     AccSettingsComponent,
     DeleteAccComponent,
-    VendorComponent
+    VendorComponent,
+    MessageComponent
 
   ],
   exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
@@ -78,6 +80,7 @@ import { VendorComponent } from './vendor/vendor.component';
       {path: 'acc-settings', component: AccSettingsComponent},
       {path: 'acc', component: DeleteAccComponent},
        {path: 'vendor', component: VendorComponent},
+         {path: 'message', component: MessageComponent},
 
     ]),
     
