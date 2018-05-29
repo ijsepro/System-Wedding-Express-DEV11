@@ -1,0 +1,115 @@
+<p>
+  <img style="height: 400px;width: 100%" class="img-fluid" src="assets\img\v (1).jpg" alt="..."/>
+  
+  
+  <br> <br>
+</p>
+<div class="container-fluid">
+  <div class="d-flex justify-content-center">
+  <div class="col-md-8">
+      <div class="card">
+          <div class="header">
+              <h4 class="tite">Vendor-SignUp</h4>
+          </div>
+          <div class="content">
+              <form [formGroup]="rForm" (ngSubmit) = "validation(rForm.value)" (ngSubmit)="createUser(rForm)" >
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Email</label>
+                              <input formControlName="email" type="email" class="form-control border-input"  placeholder="Email Address" name="email"ngModel >
+                              <br> <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlert }} ex-john@gmail.com</div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label>Full Name</label>
+                              <input formControlName="name" type="text"  class="form-control border-input " placeholder="Your full name" name="name" ng-modal="text"  required >
+                              <br> <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="form-group">
+                          <label>Username</label>
+                          <input formControlName="username" type="text" class="form-control border-input" placeholder="Your username" name="userName" ngModel>
+                          <br> <div class="alert" *ngIf="!rForm.controls['username'].valid && rForm.controls['username'].touched">{{ titleAlert }}</div>
+                          </div>
+                      </div>
+
+                  <!-- </div> -->
+                  
+
+            </div>
+        <div class="row">
+            <div class="col-md-4">
+                    <div class="form-group">
+                    <label>Category</label>
+                    <input formControlName="Category" type="text" class="form-control border-input" placeholder="Category" name="Category" ngModel>
+                    <br> <div class="alert" *ngIf="!rForm.controls['Category'].valid && rForm.controls['Category'].touched">{{ titleAlert }}</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                  <label>Location</label>
+                  <input formControlName="Location" type="text" class="form-control border-input" placeholder="Location" name="Location" ngModel>
+                  <br> <div class="alert" *ngIf="!rForm.controls['Location'].valid && rForm.controls['Location'].touched">{{ titleAlert }}</div>
+                  </div>
+              </div>
+         </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                <label>Mobile No</label>
+                <input formControlName="mobile" type="text" class="form-control border-input" placeholder="Mobile No" name="mobile" ngModel>
+                <br> <div class="alert" *ngIf="!rForm.controls['mobile'].valid && rForm.controls['mobile'].touched">{{ titleAlert }}</div>
+                </div>
+                </div>
+            </div>
+
+                  <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Password</label>
+                                  <input formControlName="password" type="password"  class="form-control border-input " placeholder="Your password" name="password" ngModel >
+                                  <br> <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">{{ titleAlert }}</div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label>Comfirm Password</label>
+                                      <input (keyup)="hasMatched($event)" formControlName="rePassword" type="password"  class="form-control border-input " placeholder="Retype password">
+                                      <br> <div class="alert" *ngIf="!rForm.controls['rePassword'].valid && rForm.controls['rePassword'].touched">{{ titleAlert }}</div>
+                                  </div>
+                              </div>
+                  </div>
+
+
+                  <!-- <div class="row">
+                      <div class="col-md-5">
+                          <div class="form-group">
+                              <label>phone number</label>
+                              <input formControlName="phoneNumber" type="text"  class="form-control border-input " placeholder="Your Phone Number" name="phoneNumber" ngModel >
+                              <br> <div class="alert" *ngIf="!rForm.controls['phoneNumber'].valid && rForm.controls['phoneNumber'].touched">{{ titleAlert }}</div>
+                          </div>
+                      </div> -->
+              <!-- </div> -->
+
+
+                  <div class="text-center">
+                          <button type="button" class="btn btn-primary" (click)="login()" >Login with Google</button>
+                  </div> <br>
+
+                  <div class="text-center">
+                      <button [disabled]="!rForm.valid" type="submit" class="btn btn-info btn-fill btn-wd">sign up</button>
+                  </div>
+                  <div class="clearfix"></div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

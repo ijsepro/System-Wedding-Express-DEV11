@@ -1,0 +1,13 @@
+
+<h4>name of business</h4>
+
+<h6>choose date to make appoinment</h6> <br>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field> <br><hr>
+<button mat-raised-button mat-dialog-close="yes" >Yes</button>
+<button mat-raised-button mat-dialog-close="no" >No</button>
+
+
