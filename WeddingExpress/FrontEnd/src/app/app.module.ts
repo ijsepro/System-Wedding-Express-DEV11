@@ -1,3 +1,4 @@
+import { VendorSignupService } from './services/vendor-signup.service';
 import { HomeComponent } from './login/home/home.component';
 import { UserdetailService } from './services/userdetail.service';
 import { LogInServiceService } from './services/login.service.service';
@@ -38,6 +39,7 @@ import { AccSettingsComponent } from './candidate/acc-settings/acc-settings.comp
 import { DeleteAccComponent } from './candidate/delete-acc/delete-acc.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,8 @@ import { AgmCoreModule } from '@agm/core';
     AppoinmentComponent,
     VendorLoginComponent,
     AccSettingsComponent,
-    DeleteAccComponent
+    DeleteAccComponent,
+    VendorSignupComponent
 
   ],
   exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
@@ -81,6 +84,7 @@ import { AgmCoreModule } from '@agm/core';
       {path: 'budget-cal', component: BudgetCalculatorComponent},
       {path: 'vendor-login', component: VendorLoginComponent},
       {path: 'vendor-dashboard', component: VendorDashboardComponent},
+      {path: 'vendor-signup' ,component:VendorSignupComponent},
       {path: 'acc-settings', component: AccSettingsComponent},
       {path: 'acc', component: DeleteAccComponent},
       
@@ -101,6 +105,7 @@ import { AgmCoreModule } from '@agm/core';
     UserdetailService,
     ApponimentService,
     VendorServiceService,
+    VendorSignupService,
     { provide: ApponimentService, useClass: ApponimentService},
     { provide: ErrorHandler, useClass: AppErrorHandler}
   ],

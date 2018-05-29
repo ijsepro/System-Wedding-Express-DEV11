@@ -10,11 +10,14 @@ public class Vendor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int vid;
-    private String vname;
+    private String fname;
+    private String userName;
     private String email;
-    private String address;
+
     private String password;
-    private String company;
+    private String companyCategory;
+    private String location;
+    private String phone;
 
     public Vendor() {
     }
@@ -23,13 +26,15 @@ public class Vendor {
         this.vid = vid;
     }
 
-    public Vendor(int vid, String vname, String email, String address, String password, String company) {
-        this.vid = vid;
-        this.vname = vname;
+    public Vendor(String fname, String userName, String email,  String password, String companyCategory, String location, String phone) {
+        this.fname = fname;
+        this.userName = userName;
         this.email = email;
-        this.address = address;
+
         this.password = password;
-        this.company = company;
+        this.companyCategory = companyCategory;
+        this.location = location;
+        this.phone = phone;
     }
 
     public int getVid() {
@@ -40,12 +45,20 @@ public class Vendor {
         this.vid = vid;
     }
 
-    public String getVname() {
-        return vname;
+    public String getFname() {
+        return fname;
     }
 
-    public void setVname(String vname) {
-        this.vname = vname;
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -56,13 +69,7 @@ public class Vendor {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getPassword() {
         return password;
@@ -72,11 +79,42 @@ public class Vendor {
         this.password = password;
     }
 
-    public String getCompany() {
-        return company;
+    public String getCompanyCategory() {
+        return companyCategory;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setCompanyCategory(String companyCategory) {
+        this.companyCategory = companyCategory;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Vendor{" +
+                "vid=" + vid +
+                ", fname='" + fname + '\'' +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+
+                ", password='" + password + '\'' +
+                ", companyCategory='" + companyCategory + '\'' +
+                ", location='" + location + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

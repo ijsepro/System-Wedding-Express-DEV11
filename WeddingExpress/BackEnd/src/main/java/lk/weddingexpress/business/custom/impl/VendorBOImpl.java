@@ -30,12 +30,18 @@ public class VendorBOImpl implements VendorBO {
 
             Vendor vendor = new Vendor();
             vendor.setVid(vendorDTO.getVid());
-            vendor.setVname(vendorDTO.getVname());
-            vendor.setAddress(vendorDTO.getAddress());
+            vendor.setFname(vendorDTO.getFname());
+            vendor.setUserName(vendorDTO.getUserName());
+            vendor.setLocation(vendorDTO.getLocation());
+            vendor.setCompanyCategory(vendorDTO.getCompanyCategory());
+            vendor.setPhone(vendorDTO.getPhone());
             vendor.setEmail(vendorDTO.getEmail());
             vendor.setPassword(vendorDTO.getPassword());
 
+            System.out.println("vendor "+ vendor);
             result = vendorRepository.save(vendor);
+
+
             session.getTransaction().commit();
 
         } catch (Exception e) {
@@ -58,10 +64,13 @@ public class VendorBOImpl implements VendorBO {
                 for (Vendor a : allVendor) {
                     Vendor vendor = new Vendor();
                     vendor.setVid(a.getVid());
-                    vendor.setVname(a.getVname());
-                    vendor.setAddress(a.getAddress());
+                    vendor.setFname(a.getFname());
+                    vendor.setUserName(a.getUserName());
+
+                    vendor.setCompanyCategory(a.getCompanyCategory());
                     vendor.setEmail(a.getEmail());
                     vendor.setPassword(a.getPassword());
+                    vendor.setPhone(a.getPhone());
                 }
                 return vendorDTOS;
             } else {
@@ -86,11 +95,13 @@ public class VendorBOImpl implements VendorBO {
                         VendorDTO vendorDTO = new VendorDTO();
 
                         vendorDTO.setVid(vendors.getVid());
-                        vendorDTO.setVname(vendors.getVname());
+                        vendorDTO.setFname(vendors.getFname());
                         vendorDTO.setEmail(vendors.getEmail());
-                        vendorDTO.setAddress(vendors.getAddress());
+                        vendorDTO.setUserName(vendors.getUserName());
                         vendorDTO.setPassword(vendors.getPassword());
-                        vendorDTO.setCompany(vendors.getCompany());
+                        vendorDTO.setCompanyCategory(vendors.getCompanyCategory());
+                        vendorDTO.setPhone(vendors.getPhone());
+                        vendorDTO.setLocation(vendors.getLocation());
 
                         return vendorDTO;
                     } else {
