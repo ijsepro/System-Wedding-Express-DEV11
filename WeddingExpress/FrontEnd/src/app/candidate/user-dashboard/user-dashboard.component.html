@@ -127,7 +127,7 @@
   </div>
 
 
-      <div class="row">
+      <!-- <div class="row">
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
               <img class="card-img-top" src="assets/img/vp.jpg" alt="Card image cap">
@@ -149,5 +149,36 @@
               </div>
             </div>
           </div>
-      </div>
+      </div> -->
+
+
+      <mat-toolbar color="primary" style="width: 700px ;margin-left: 10%">
+          <mat-toolbar-row>
+              <span></span>
+              <span class="example-spacer"></span>
+              <mat-icon class="example-icon">favorite</mat-icon>
+              <mat-icon class="example-icon">delete</mat-icon>
+          </mat-toolbar-row>
+      </mat-toolbar>
+      
+      <mat-card class="example-card" style="width: 700px ;margin-left: 10%" >
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"> </div>
+                <mat-card-title>Wedding Photography</mat-card-title>
+
+        </mat-card-header>
+
+        <img mat-card-image src="assets/img/vp.jpg">
+
+        <mat-card-content>
+            <p>
+                Wedding Photography ream is the sri lankan top videography team in sri lanka.
+                we are proud do tell about that, there are 10 branches in island wide .
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="accent"> LIKE  </button>
+            <button  (click)="makeAppoinment() "type="button" class="btn btn-light" aria-label="Left Align" mat-raised-button color="accent"> Make An Appointmnet  </button>
+        </mat-card-actions>
+      </mat-card>
 </div>
