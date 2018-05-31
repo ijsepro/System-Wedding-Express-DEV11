@@ -16,17 +16,17 @@ export class DataServiceService {
 
   getAll(){
     return this.http.get(this.URL)
-     .map(response => response.json())   
+     .map(response => response.json())
      .catch(this.handleError);
   }
 
-  search(resource){  
+  search(resource){
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Accept', 'application/json');
     let options = new RequestOptions({ headers: headers });
 
     return this.http.post(this.URL + '/check' , JSON.stringify(resource), options)
-    .map(response => response.json()) 
+    .map(response => response.json())
     .catch(this.handleError);
   }
 
@@ -40,29 +40,45 @@ export class DataServiceService {
     .catch(this.handleError);
   }
 
-  update(resource){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    headers.append('Accept', 'application/json');
-    let options = new RequestOptions({ headers: headers });
-    return this.http.put(this.URL + '/upt', JSON.stringify(resource), options)
-    .map(response => response.json())
-    .catch(this.handleError);
+  // update(resource){
+  //   let headers = new Headers({ 'Content-Type': 'application/json' });
+  //   headers.append('Accept', 'application/json');
+  //   let options = new RequestOptions({ headers: headers });
+  //   return this.http.put(this.URL + '/upt', JSON.stringify(resource), options)
+  //   .map(response => response.json())
+  //   .catch(this.handleError);
+  // }
+
+  // delete(resource){
+  //   return this.http.delete(this.URL + '/alien/' + resource.points, JSON.stringify({isRead: true}))
+  //   .map(response => response.json())
+  //   .catch(this.handleError);
+  // }
+  deleteAccount(resource){
+    return this.http.delete(this.URL + '/de/' + resource.points, JSON.stringify({isRead: true}))
+      .map(response => response.json())
+      .catch(this.handleError);
   }
 
-  delete(resource){
-    return this.http.delete(this.URL + '/alien/' + resource.points, JSON.stringify({isRead: true}))
-    .map(response => response.json())
-    .catch(this.handleError);
-  }
-
-  authVendor(resource){  
+  authVendor(resource){
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Accept', 'application/json');
     let options = new RequestOptions({ headers: headers });
 
     return this.http.post(this.URL + '/auth-vendor' , JSON.stringify(resource), options)
-    .map(response => response.json()) 
+    .map(response => response.json())
     .catch(this.handleError);
+  }
+
+  updatePost(resource){
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+    console.log("updated");
+    return this.http.put(this.URL + '/up', JSON.stringify(resource), options)
+    .map(response => response.json())
+     .catch(this.handleError);
+    
   }
 
   private handleError(error: Response){

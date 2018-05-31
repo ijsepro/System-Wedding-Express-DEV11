@@ -10,14 +10,14 @@
             <h4 class="tite" style="text-align: left ; margin-left: 80px">Update Your Password</h4>
           </div>
             <div class="content">
-             <form [formGroup]="accountForm" (ngSubmit)="validation(accountForm.value)" (ngSubmit)="searchUser(accountForm)">
+             <form [formGroup]="accountForm" (ngSubmit)="validation(accountForm.value)">
                   <div class="row" style="margin-left: 100px">
                          <label for="lgFormGroupInput" class="col-sm-3 col-form-label col-form-label-lg">Current Password</label>
-                            <div class="col-sm-6">                               
+                            <div class="col-sm-6">
                               <div class="form-group">
                                     <input type="password" formControlName="CurrentPassword"  class="form-control border-input"  placeholder="Current Password"   id="CurrentPassword" name="CurrentPassword" [(ngModel)]="txtcurrentpswd">
                                      <div class="alert"  *ngIf="!accountForm.controls['CurrentPassword'].valid && accountForm.controls['CurrentPassword'].touched">{{ titleAlert }}</div>
-                               </div>                                 
+                               </div>
                             </div>
                      </div>
 
@@ -41,15 +41,62 @@
                        </div>
                 </div>
 
+               <div class="row" style="margin-left: 100px">
+                 <label for="lgFormGroupInput"  class="col-sm-3 col-form-label col-form-label-lg">Email</label>
+                 <div class="col-sm-6">
+                   <div class="form-group">
+                     <input type="text"  class="form-control" class="form-control border-input"  placeholder="email"   id="email" name="email">
+
+                   </div>
+                 </div>
+               </div>
+
                 <h4 class="tite" style="text-align: left ; margin-left: 80px">Delete Your Account</h4>
                 <br>
-                   <div>
-                     <p style="margin-left: 100px">Did your plans change?    <a style="color:blue" routerLink='/acc'>Delete Your Account</a></p>
-                    </div>
+               <div class="row" style="margin-left: 100px">
+                 <p>We are sorry to see you go!Are you sure you want to delete your account?</p>
+               </div>
+               <br>
+               <div>
+                 <h5 style="text-align: left ; margin-left: 80px">Deleting Your Account will remove your ;</h5>
+
+                 <ul style="text-align: left ; margin-left: 80px">
+                   <li>Account and all information ,including email subscriptions</li>
+                   <li>Vendor list</li>
+                   <li> Appointments</li>
+                   <li>Budgeter </li>
+                   <li>favourites</li>
+                 </ul>
+
+               </div>
+
+               <div>
+                 <h5 style="text-align: left ; margin-left: 80px">Deleting Your Account will not remove your ;</h5>
+                 <ul style="text-align: left ; margin-left: 80px">
+                   <li>Community Forum accounts</li>
+                   <li>Your Posts</li>
+                 </ul>
+               </div>
+
+               <div>
+                 <h5 style="text-align: left ; margin-left: 80px ; color: red">Are you sure you want to delete your Account?</h5>
+               </div>
+               <br>
+
+               <div>
+              
+                 <button type="submit" (click)="deleteAccount(accountForm)" class="btn btn-info btn-fill btn-wd" style="align-items: left;margin-left: 80px">Delete Account</button>  <button type="submit" (click)="updateData(accountForm)" class="btn btn-info btn-fill btn-wd" style="align-items: center"  [disabled]="!accountForm.valid">Save Your Changes</button>
+
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+               </div>
 
                     <br>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-info btn-fill btn-wd" style="align-items: center"  [disabled]="!accountForm.valid">Save Your Changes</button>
+
                     </div>
                     <br>
                     <br>

@@ -40,6 +40,7 @@ import { DeleteAccComponent } from './candidate/delete-acc/delete-acc.component'
 
 // import { AgmCoreModule } from '@agm/core';
 import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.component';
+import {AccountsettingsService} from "./services/accountsettings.service";
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
     VendorServiceService,
     VendorSignupService,
     { provide: ApponimentService, useClass: ApponimentService},
-    { provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler},
+    { provide: AccountsettingsService, useClass: AccountsettingsService}
   ],
   bootstrap: [AppComponent]
 })
