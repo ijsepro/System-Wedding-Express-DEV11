@@ -2,6 +2,7 @@ package lk.weddingexpress.controller;
 
 import lk.weddingexpress.business.BOFactory;
 import lk.weddingexpress.business.custom.VendorBO;
+
 import lk.weddingexpress.dto.VendorDTO;
 
 import javax.ws.rs.GET;
@@ -17,6 +18,13 @@ public class VendorController {
     public VendorController(){
         vendorBO = (VendorBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.VENDOR);
     }
+    @POST
+    @Path("crt")
+    @Produces(MediaType.APPLICATION_JSON)
+    public boolean createUser(VendorDTO vendorDTO){
+        return vendorBO.saveVendor(vendorDTO);
+    }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
