@@ -40,6 +40,8 @@ import { DeleteAccComponent } from './candidate/delete-acc/delete-acc.component'
 
 // import { AgmCoreModule } from '@agm/core';
 import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.component';
+import {AccountsettingsService} from "./services/accountsettings.service";
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
     VendorLoginComponent,
     AccSettingsComponent,
     DeleteAccComponent,
-    VendorSignupComponent
+    VendorSignupComponent,
+    MessageComponent
 
   ],
   exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
@@ -87,7 +90,7 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
       {path: 'vendor-signup' ,component:VendorSignupComponent},
       {path: 'acc-settings', component: AccSettingsComponent},
       {path: 'acc', component: DeleteAccComponent},
-      
+       {path: 'message', component: MessageComponent},
 
     ]),
     
@@ -110,7 +113,8 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
     VendorServiceService,
     VendorSignupService,
     { provide: ApponimentService, useClass: ApponimentService},
-    { provide: ErrorHandler, useClass: AppErrorHandler}
+    { provide: ErrorHandler, useClass: AppErrorHandler},
+    { provide: AccountsettingsService, useClass: AccountsettingsService}
   ],
   bootstrap: [AppComponent]
 })
