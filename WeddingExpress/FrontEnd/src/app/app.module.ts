@@ -43,6 +43,8 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
 import {AccountsettingsService} from "./services/accountsettings.service";
 import { MessageComponent } from './message/message.component';
 
+import { VendorProfileComponent } from './vendor-profile/vendor-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,10 @@ import { MessageComponent } from './message/message.component';
     AccSettingsComponent,
     DeleteAccComponent,
     VendorSignupComponent,
-    MessageComponent
+    MessageComponent,
+    VendorProfileComponent
+   
+
 
   ],
   exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
@@ -91,7 +96,7 @@ import { MessageComponent } from './message/message.component';
       {path: 'acc-settings', component: AccSettingsComponent},
       {path: 'acc', component: DeleteAccComponent},
        {path: 'message', component: MessageComponent},
-
+         {path: 'vendor profile', component: VendorProfileComponent},
     ]),
     
     NgbModule.forRoot(),
