@@ -51,6 +51,7 @@ import { BonitaComponent } from './salon/bonita/bonita.component';
 import { VenuesComponent } from './venues/venues.component';
 import { FloristsComponent } from './florists/florists.component';
 import { LassanaFloraComponent } from './florists/lassana-flora/lassana-flora.component';
+import { WeddingFloraComponent } from './florists/wedding-flora/wedding-flora.component';
 
 
 
@@ -80,7 +81,8 @@ import { LassanaFloraComponent } from './florists/lassana-flora/lassana-flora.co
     BonitaComponent,
     VenuesComponent,
     FloristsComponent,
-    LassanaFloraComponent
+    LassanaFloraComponent,
+    WeddingFloraComponent
    
 
 
@@ -120,6 +122,7 @@ import { LassanaFloraComponent } from './florists/lassana-flora/lassana-flora.co
          {path: 'venues',component:VenuesComponent},
          {path: 'florists', component: FloristsComponent},
          {path: 'lassana-flora', component: LassanaFloraComponent},
+         {path: 'wedding-flora', component: WeddingFloraComponent},
     ]),
     
     NgbModule.forRoot(),
