@@ -48,6 +48,7 @@ import { SalonComponent } from './salon/salon.component';
 import { OhasaComponent } from './salon/ohasa/ohasa.component';
 import { VenusComponent } from './salon/venus/venus.component';
 import { BonitaComponent } from './salon/bonita/bonita.component';
+import { VenuesComponent } from './venues/venues.component';
 
 
 
@@ -75,6 +76,7 @@ import { BonitaComponent } from './salon/bonita/bonita.component';
     OhasaComponent,
     VenusComponent,
     BonitaComponent,
+    VenuesComponent,
    
 
 
@@ -111,6 +113,7 @@ import { BonitaComponent } from './salon/bonita/bonita.component';
          {path: 'salon-ohasa', component: OhasaComponent},
          {path: 'salon-venus', component: VenusComponent},
          {path: 'bonita', component: BonitaComponent},
+         {path: 'venues',component:VenuesComponent},
     ]),
     
     NgbModule.forRoot(),
