@@ -43,6 +43,15 @@ import { VendorSignupComponent } from './business/vendor-signup/vendor-signup.co
 import {AccountsettingsService} from "./services/accountsettings.service";
 import { MessageComponent } from './message/message.component';
 
+import { VendorProfileComponent } from './vendor-profile/vendor-profile.component';
+import { SalonComponent } from './salon/salon.component';
+import { OhasaComponent } from './salon/ohasa/ohasa.component';
+import { VenusComponent } from './salon/venus/venus.component';
+import { BonitaComponent } from './salon/bonita/bonita.component';
+import { VenuesComponent } from './venues/venues.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +70,15 @@ import { MessageComponent } from './message/message.component';
     AccSettingsComponent,
     DeleteAccComponent,
     VendorSignupComponent,
-    MessageComponent
+    MessageComponent,
+    VendorProfileComponent,
+    SalonComponent,
+    OhasaComponent,
+    VenusComponent,
+    BonitaComponent,
+    VenuesComponent,
+   
+
 
   ],
   exports: [ MatTableModule , MatButtonModule, MatDialogModule ],
@@ -91,7 +108,12 @@ import { MessageComponent } from './message/message.component';
       {path: 'acc-settings', component: AccSettingsComponent},
       {path: 'acc', component: DeleteAccComponent},
        {path: 'message', component: MessageComponent},
-
+         {path: 'vendor profile', component: VendorProfileComponent},
+         {path: 'salon', component: SalonComponent},
+         {path: 'salon-ohasa', component: OhasaComponent},
+         {path: 'salon-venus', component: VenusComponent},
+         {path: 'bonita', component: BonitaComponent},
+         {path: 'venues',component:VenuesComponent},
     ]),
     
     NgbModule.forRoot(),
