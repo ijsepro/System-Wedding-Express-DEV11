@@ -55,6 +55,7 @@ import { LassanaFloraComponent } from './florists/lassana-flora/lassana-flora.co
 import { WeddingFloraComponent } from './florists/wedding-flora/wedding-flora.component';
 import { ManaharaComponent } from './florists/manahara/manahara.component';
 import { GaladariComponent } from './venues/galadari/galadari.component';
+import { AmariComponent } from './venues/amari/amari.component';
 
 
 
@@ -88,7 +89,8 @@ import { GaladariComponent } from './venues/galadari/galadari.component';
     LassanaFloraComponent,
     WeddingFloraComponent,
     ManaharaComponent,
-    GaladariComponent
+    GaladariComponent,
+    AmariComponent
    
 
 
@@ -132,6 +134,8 @@ import { GaladariComponent } from './venues/galadari/galadari.component';
          {path: 'wedding-flora', component: WeddingFloraComponent},
          {path: 'manahara-flora', component: ManaharaComponent},
          {path: 'galadari' , component:GaladariComponent},
+         {path: 'amari',component:AmariComponent},
+
     ]),
     
     NgbModule.forRoot(),
