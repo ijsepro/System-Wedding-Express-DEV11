@@ -1,3 +1,4 @@
+
 import { VendorSignupService } from './services/vendor-signup.service';
 import { HomeComponent } from './login/home/home.component';
 import { UserdetailService } from './services/userdetail.service';
@@ -58,9 +59,8 @@ import { GaladariComponent } from './venues/galadari/galadari.component';
 import { AmariComponent } from './venues/amari/amari.component';
 import { ShangrilaComponent } from './venues/shangrila/shangrila.component';
 import { OriencoComponent } from './venues/orienco/orienco.component';
-import { BreezComponent } from './venues/breez/breez.component';
 import { AvenraComponent } from './venues/avenra/avenra.component';
-
+import { BreezComponent } from './venues/breez/breez.component';
 
 
 @NgModule({
@@ -96,9 +96,7 @@ import { AvenraComponent } from './venues/avenra/avenra.component';
     GaladariComponent,
     AmariComponent,
     ShangrilaComponent,
-    OriencoComponent,
-    BreezComponent,
-    AvenraComponent
+    OriencoComponent
    
 
 
@@ -144,6 +142,10 @@ import { AvenraComponent } from './venues/avenra/avenra.component';
          {path: 'galadari' , component:GaladariComponent},
          {path: 'amari',component:AmariComponent},
          {path: 'shangrila',component:ShangrilaComponent},
+         {path: 'orienco',component:OriencoComponent},
+        //  {path: 'breez',component:BreezComponent},
+        //  {path: 'avenra',component:AvenraComponent},
+
 
     ]),
     
