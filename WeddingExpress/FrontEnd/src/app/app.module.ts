@@ -56,6 +56,10 @@ import { WeddingFloraComponent } from './florists/wedding-flora/wedding-flora.co
 import { ManaharaComponent } from './florists/manahara/manahara.component';
 import { GaladariComponent } from './venues/galadari/galadari.component';
 import { AmariComponent } from './venues/amari/amari.component';
+import { ShangrilaComponent } from './venues/shangrila/shangrila.component';
+import { OriencoComponent } from './venues/orienco/orienco.component';
+import { BreezComponent } from './venues/breez/breez.component';
+import { AvenraComponent } from './venues/avenra/avenra.component';
 
 
 
@@ -90,7 +94,11 @@ import { AmariComponent } from './venues/amari/amari.component';
     WeddingFloraComponent,
     ManaharaComponent,
     GaladariComponent,
-    AmariComponent
+    AmariComponent,
+    ShangrilaComponent,
+    OriencoComponent,
+    BreezComponent,
+    AvenraComponent
    
 
 
@@ -135,6 +143,7 @@ import { AmariComponent } from './venues/amari/amari.component';
          {path: 'manahara-flora', component: ManaharaComponent},
          {path: 'galadari' , component:GaladariComponent},
          {path: 'amari',component:AmariComponent},
+         {path: 'shangrila',component:ShangrilaComponent},
 
     ]),
     
