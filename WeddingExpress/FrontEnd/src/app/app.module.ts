@@ -62,6 +62,8 @@ import { OriencoComponent } from './venues/orienco/orienco.component';
 import { AvenraComponent } from './venues/avenra/avenra.component';
 import { BreezComponent } from './venues/breez/breez.component';
 import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora.component';
+import { PhotographersComponent } from './photographers/photographers.component';
+import { RehanComponent } from './photographers/rehan/rehan.component';
 
 
 @NgModule({
@@ -98,7 +100,9 @@ import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora
     AmariComponent,
     ShangrilaComponent,
     OriencoComponent,
-    CrescentFloraComponent
+    CrescentFloraComponent,
+    PhotographersComponent,
+    RehanComponent
    
 
 
@@ -146,6 +150,8 @@ import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora
          {path: 'shangrila',component:ShangrilaComponent},
          {path: 'orienco',component:OriencoComponent},
          {path: 'crescent-flora', component: CrescentFloraComponent},
+         {path: 'photo', component: PhotographersComponent},
+         {path: 'rehan', component: RehanComponent},
         //  {path: 'breez',component:BreezComponent},
         //  {path: 'avenra',component:AvenraComponent},
 
