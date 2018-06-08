@@ -61,6 +61,7 @@ import { ShangrilaComponent } from './venues/shangrila/shangrila.component';
 import { OriencoComponent } from './venues/orienco/orienco.component';
 import { AvenraComponent } from './venues/avenra/avenra.component';
 import { BreezComponent } from './venues/breez/breez.component';
+import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { BreezComponent } from './venues/breez/breez.component';
     GaladariComponent,
     AmariComponent,
     ShangrilaComponent,
-    OriencoComponent
+    OriencoComponent,
+    CrescentFloraComponent
    
 
 
@@ -143,6 +145,7 @@ import { BreezComponent } from './venues/breez/breez.component';
          {path: 'amari',component:AmariComponent},
          {path: 'shangrila',component:ShangrilaComponent},
          {path: 'orienco',component:OriencoComponent},
+         {path: 'crescent-flora', component: CrescentFloraComponent},
         //  {path: 'breez',component:BreezComponent},
         //  {path: 'avenra',component:AvenraComponent},
 
