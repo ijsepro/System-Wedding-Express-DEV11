@@ -1,4 +1,5 @@
 
+
 import { VendorSignupService } from './services/vendor-signup.service';
 import { HomeComponent } from './login/home/home.component';
 import { UserdetailService } from './services/userdetail.service';
@@ -64,6 +65,7 @@ import { BreezComponent } from './venues/breez/breez.component';
 import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora.component';
 import { PhotographersComponent } from './photographers/photographers.component';
 import { RehanComponent } from './photographers/rehan/rehan.component';
+import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.component';
 
 
 @NgModule({
@@ -102,7 +104,8 @@ import { RehanComponent } from './photographers/rehan/rehan.component';
     OriencoComponent,
     CrescentFloraComponent,
     PhotographersComponent,
-    RehanComponent
+    RehanComponent,
+    CrystalFloraComponent
    
 
 
@@ -152,6 +155,7 @@ import { RehanComponent } from './photographers/rehan/rehan.component';
          {path: 'crescent-flora', component: CrescentFloraComponent},
          {path: 'photo', component: PhotographersComponent},
          {path: 'rehan', component: RehanComponent},
+         {path: 'crystal-flora', component: CrystalFloraComponent},
         //  {path: 'breez',component:BreezComponent},
         //  {path: 'avenra',component:AvenraComponent},
 
