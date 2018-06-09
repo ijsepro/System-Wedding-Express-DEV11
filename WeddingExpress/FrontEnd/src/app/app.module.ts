@@ -67,6 +67,7 @@ import { PhotographersComponent } from './photographers/photographers.component'
 import { RehanComponent } from './photographers/rehan/rehan.component';
 import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.component';
 import { ClickComponent } from './photographers/click/click.component';
+import { BestComponent } from './photographers/best/best.component';
 
 
 @NgModule({
@@ -108,8 +109,8 @@ import { ClickComponent } from './photographers/click/click.component';
     RehanComponent,
     CrystalFloraComponent,
     AvenraComponent,
-    ClickComponent
-   
+    ClickComponent,
+    BestComponent
 
 
   ],
@@ -160,6 +161,7 @@ import { ClickComponent } from './photographers/click/click.component';
          {path: 'rehan', component: RehanComponent},
          {path: 'crystal-flora', component: CrystalFloraComponent},
         //  {path: 'breez',component:BreezComponent},
+        {path: 'best', component: BestComponent},
          {path: 'avenra',component:AvenraComponent},
          {path: 'click', component: ClickComponent},
 
