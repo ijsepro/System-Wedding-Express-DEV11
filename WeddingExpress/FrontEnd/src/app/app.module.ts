@@ -105,7 +105,8 @@ import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.co
     CrescentFloraComponent,
     PhotographersComponent,
     RehanComponent,
-    CrystalFloraComponent
+    CrystalFloraComponent,
+    AvenraComponent
    
 
 
@@ -157,7 +158,7 @@ import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.co
          {path: 'rehan', component: RehanComponent},
          {path: 'crystal-flora', component: CrystalFloraComponent},
         //  {path: 'breez',component:BreezComponent},
-        //  {path: 'avenra',component:AvenraComponent},
+         {path: 'avenra',component:AvenraComponent},
 
 
     ]),
