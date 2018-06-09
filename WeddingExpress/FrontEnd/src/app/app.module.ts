@@ -66,6 +66,7 @@ import { CrescentFloraComponent } from './florists/crescent-flora/crescent-flora
 import { PhotographersComponent } from './photographers/photographers.component';
 import { RehanComponent } from './photographers/rehan/rehan.component';
 import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.component';
+import { ClickComponent } from './photographers/click/click.component';
 
 
 @NgModule({
@@ -106,7 +107,8 @@ import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.co
     PhotographersComponent,
     RehanComponent,
     CrystalFloraComponent,
-    AvenraComponent
+    AvenraComponent,
+    ClickComponent
    
 
 
@@ -159,6 +161,7 @@ import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.co
          {path: 'crystal-flora', component: CrystalFloraComponent},
         //  {path: 'breez',component:BreezComponent},
          {path: 'avenra',component:AvenraComponent},
+         {path: 'click', component: ClickComponent},
 
 
     ]),
