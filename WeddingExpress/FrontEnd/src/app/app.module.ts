@@ -70,6 +70,7 @@ import { ClickComponent } from './photographers/click/click.component';
 import { BestComponent } from './photographers/best/best.component';
 import { WhiteComponent } from './venues/white/white.component';
 import { HeavenComponent } from './venues/heaven/heaven.component';
+import { MaheshManneppurumaComponent } from './photographers/mahesh-manneppuruma/mahesh-manneppuruma.component';
 
 
 @NgModule({
@@ -115,7 +116,8 @@ import { HeavenComponent } from './venues/heaven/heaven.component';
     BestComponent,
     BreezComponent,
     WhiteComponent,
-    HeavenComponent
+    HeavenComponent,
+    MaheshManneppurumaComponent
 
 
   ],
@@ -171,6 +173,7 @@ import { HeavenComponent } from './venues/heaven/heaven.component';
          {path: 'click', component: ClickComponent},
          {path: 'white',component:WhiteComponent},
          {path: 'heaven',component:HeavenComponent},
+         {path: 'mahesh' , component:MaheshManneppurumaComponent}
 
 
     ]),
