@@ -110,7 +110,8 @@ import { BestComponent } from './photographers/best/best.component';
     CrystalFloraComponent,
     AvenraComponent,
     ClickComponent,
-    BestComponent
+    BestComponent,
+    BreezComponent
 
 
   ],
@@ -160,7 +161,7 @@ import { BestComponent } from './photographers/best/best.component';
          {path: 'photo', component: PhotographersComponent},
          {path: 'rehan', component: RehanComponent},
          {path: 'crystal-flora', component: CrystalFloraComponent},
-        //  {path: 'breez',component:BreezComponent},
+         {path: 'breez',component:BreezComponent},
         {path: 'best', component: BestComponent},
          {path: 'avenra',component:AvenraComponent},
          {path: 'click', component: ClickComponent},
