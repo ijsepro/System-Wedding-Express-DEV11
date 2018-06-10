@@ -69,6 +69,7 @@ import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.co
 import { ClickComponent } from './photographers/click/click.component';
 import { BestComponent } from './photographers/best/best.component';
 import { WhiteComponent } from './venues/white/white.component';
+import { HeavenComponent } from './venues/heaven/heaven.component';
 
 
 @NgModule({
@@ -113,7 +114,8 @@ import { WhiteComponent } from './venues/white/white.component';
     ClickComponent,
     BestComponent,
     BreezComponent,
-    WhiteComponent
+    WhiteComponent,
+    HeavenComponent
 
 
   ],
@@ -168,6 +170,7 @@ import { WhiteComponent } from './venues/white/white.component';
          {path: 'avenra',component:AvenraComponent},
          {path: 'click', component: ClickComponent},
          {path: 'white',component:WhiteComponent},
+         {path: 'heaven',component:HeavenComponent},
 
 
     ]),
