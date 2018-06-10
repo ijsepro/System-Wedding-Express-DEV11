@@ -68,6 +68,7 @@ import { RehanComponent } from './photographers/rehan/rehan.component';
 import { CrystalFloraComponent } from './florists/crystal-flora/crystal-flora.component';
 import { ClickComponent } from './photographers/click/click.component';
 import { BestComponent } from './photographers/best/best.component';
+import { WhiteComponent } from './venues/white/white.component';
 
 
 @NgModule({
@@ -111,7 +112,8 @@ import { BestComponent } from './photographers/best/best.component';
     AvenraComponent,
     ClickComponent,
     BestComponent,
-    BreezComponent
+    BreezComponent,
+    WhiteComponent
 
 
   ],
@@ -165,6 +167,7 @@ import { BestComponent } from './photographers/best/best.component';
         {path: 'best', component: BestComponent},
          {path: 'avenra',component:AvenraComponent},
          {path: 'click', component: ClickComponent},
+         {path: 'white',component:WhiteComponent},
 
 
     ]),
