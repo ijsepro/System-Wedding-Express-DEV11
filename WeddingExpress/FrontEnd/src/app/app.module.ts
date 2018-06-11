@@ -71,6 +71,7 @@ import { BestComponent } from './photographers/best/best.component';
 import { WhiteComponent } from './venues/white/white.component';
 import { HeavenComponent } from './venues/heaven/heaven.component';
 import { MaheshManneppurumaComponent } from './photographers/mahesh-manneppuruma/mahesh-manneppuruma.component';
+import { EweuniComponent } from './salon/eweuni/eweuni.component';
 
 
 @NgModule({
@@ -117,7 +118,8 @@ import { MaheshManneppurumaComponent } from './photographers/mahesh-manneppuruma
     BreezComponent,
     WhiteComponent,
     HeavenComponent,
-    MaheshManneppurumaComponent
+    MaheshManneppurumaComponent,
+    EweuniComponent
 
 
   ],
@@ -173,6 +175,7 @@ import { MaheshManneppurumaComponent } from './photographers/mahesh-manneppuruma
          {path: 'click', component: ClickComponent},
          {path: 'white',component:WhiteComponent},
          {path: 'heaven',component:HeavenComponent},
+         {path: 'ewe' , component:EweuniComponent},
          {path: 'mahesh' , component:MaheshManneppurumaComponent}
 
 
