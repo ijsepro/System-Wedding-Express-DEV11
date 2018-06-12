@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    height: 600px;
+    margin-left: 0%;
+    position: relative;
+    background-image: url(assets\img\dj-6.jpg);
+    max-width: 1500px;
+    background-size: cover;
+    
+
+}
+.container  .inner{
+    position: absolute;
+    width: 100%;
+    background-color:rgba(58, 48, 48, 0.60);
+    transform: translate(-50% , -50%);
+    top :80%;
+    left: 50%;
+    border-bottom: 4px  solid #292424;
+    border-top: 4px  solid #292424;
+}
+
+.container  .inner  p{
+    text-align: center;
+    font-family: arial;
+    font-size: 35px;
+}
