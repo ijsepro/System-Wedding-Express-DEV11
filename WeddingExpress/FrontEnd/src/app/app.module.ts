@@ -75,6 +75,7 @@ import { EweuniComponent } from './salon/eweuni/eweuni.component';
 import { MusicComponent } from './music/music.component';
 import { Dj1Component } from './music/dj1/dj1.component';
 import { GaneeshanComponent } from './photographers/ganeeshan/ganeeshan.component';
+import { Dj2Component } from './music/dj2/dj2.component';
 
 
 @NgModule({
@@ -125,7 +126,8 @@ import { GaneeshanComponent } from './photographers/ganeeshan/ganeeshan.componen
     EweuniComponent,
     MusicComponent,
     Dj1Component,
-    GaneeshanComponent
+    GaneeshanComponent,
+    Dj2Component
 
 
   ],
@@ -186,6 +188,7 @@ import { GaneeshanComponent } from './photographers/ganeeshan/ganeeshan.componen
          {path: 'music' , component:MusicComponent},
          {path: 'dj1' ,component:Dj1Component},
          {path: 'geeshan' , component:GaneeshanComponent},
+         {path:'dj2',component:Dj2Component},
 
 
     ]),
