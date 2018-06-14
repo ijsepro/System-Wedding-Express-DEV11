@@ -3,6 +3,7 @@
 import { VendorSignupService } from './services/vendor-signup.service';
 import { HomeComponent } from './login/home/home.component';
 import { UserdetailService } from './services/userdetail.service';
+import { VendordetailService } from './services/vendordetail.service';
 import { LogInServiceService } from './services/login.service.service';
 import { ApponimentService } from './services/apponiment.service';
 import { AppErrorHandler } from './common/app-error-handler';
@@ -78,6 +79,7 @@ import { GaneeshanComponent } from './photographers/ganeeshan/ganeeshan.componen
 import { Dj2Component } from './music/dj2/dj2.component';
 import { MarsComponent } from './salon/mars/mars.component';
 import { VDashboardComponent } from './business/v-dashboard/v-dashboard.component';
+import { PhotosComponent } from './photographers/photos/photos.component';
 
 
 @NgModule({
@@ -131,7 +133,8 @@ import { VDashboardComponent } from './business/v-dashboard/v-dashboard.componen
     GaneeshanComponent,
     Dj2Component,
     MarsComponent,
-    VDashboardComponent
+    VDashboardComponent,
+    PhotosComponent
 
 
   ],
@@ -195,6 +198,7 @@ import { VDashboardComponent } from './business/v-dashboard/v-dashboard.componen
          {path: 'geeshan' , component:GaneeshanComponent},
          {path:'dj2',component:Dj2Component},
          {path: 'mars' , component:MarsComponent},
+         {path: 'foto' , component:PhotosComponent},
 
 
     ]),
@@ -217,6 +221,7 @@ import { VDashboardComponent } from './business/v-dashboard/v-dashboard.componen
     ApponimentService,
     VendorServiceService,
     VendorSignupService,
+    VendordetailService,
     { provide: ApponimentService, useClass: ApponimentService},
     { provide: ErrorHandler, useClass: AppErrorHandler},
     { provide: AccountsettingsService, useClass: AccountsettingsService}
