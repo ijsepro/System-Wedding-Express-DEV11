@@ -77,6 +77,7 @@ import { Dj1Component } from './music/dj1/dj1.component';
 import { GaneeshanComponent } from './photographers/ganeeshan/ganeeshan.component';
 import { Dj2Component } from './music/dj2/dj2.component';
 import { MarsComponent } from './salon/mars/mars.component';
+import { VDashboardComponent } from './business/v-dashboard/v-dashboard.component';
 
 
 @NgModule({
@@ -129,7 +130,8 @@ import { MarsComponent } from './salon/mars/mars.component';
     Dj1Component,
     GaneeshanComponent,
     Dj2Component,
-    MarsComponent
+    MarsComponent,
+    VDashboardComponent
 
 
   ],
@@ -150,6 +152,7 @@ import { MarsComponent } from './salon/mars/mars.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'user', component: UserComponent},
+      {path: 'vendor', component: VDashboardComponent},
       {path: 'login', component: LoginComponent},
       {path: 'signup', component: SignupComponent},
       {path: 'user-dashboard', component: UserDashboardComponent},
