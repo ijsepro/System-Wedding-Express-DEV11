@@ -81,6 +81,7 @@ import { MarsComponent } from './salon/mars/mars.component';
 import { VDashboardComponent } from './business/v-dashboard/v-dashboard.component';
 import { PhotosComponent } from './photographers/photos/photos.component';
 import { AdminComponent } from './admin/admin.component';
+import { Dj3Component } from './music/dj3/dj3.component';
 
 
 @NgModule({
@@ -136,7 +137,8 @@ import { AdminComponent } from './admin/admin.component';
     MarsComponent,
     VDashboardComponent,
     PhotosComponent,
-    AdminComponent
+    AdminComponent,
+    Dj3Component
 
 
   ],
@@ -202,6 +204,7 @@ import { AdminComponent } from './admin/admin.component';
          {path: 'mars' , component:MarsComponent},
          {path: 'foto' , component:PhotosComponent},
            {path: 'admin' , component:AdminComponent},
+           {path:'dj3',component:Dj3Component},
 
 
     ]),
