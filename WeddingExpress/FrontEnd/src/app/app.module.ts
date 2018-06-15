@@ -82,6 +82,7 @@ import { VDashboardComponent } from './business/v-dashboard/v-dashboard.componen
 import { PhotosComponent } from './photographers/photos/photos.component';
 import { AdminComponent } from './admin/admin.component';
 import { Dj3Component } from './music/dj3/dj3.component';
+import { Dj4Component } from './music/dj4/dj4.component';
 
 
 @NgModule({
@@ -138,7 +139,8 @@ import { Dj3Component } from './music/dj3/dj3.component';
     VDashboardComponent,
     PhotosComponent,
     AdminComponent,
-    Dj3Component
+    Dj3Component,
+    Dj4Component
 
 
   ],
@@ -205,6 +207,7 @@ import { Dj3Component } from './music/dj3/dj3.component';
          {path: 'foto' , component:PhotosComponent},
            {path: 'admin' , component:AdminComponent},
            {path:'dj3',component:Dj3Component},
+           {path:'dj4',component:Dj4Component}
 
 
     ]),
