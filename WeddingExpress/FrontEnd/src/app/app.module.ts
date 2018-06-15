@@ -1,3 +1,4 @@
+import { Dj5Component } from './music/dj5/dj5.component';
 
 
 import { VendorSignupService } from './services/vendor-signup.service';
@@ -140,7 +141,8 @@ import { Dj4Component } from './music/dj4/dj4.component';
     PhotosComponent,
     AdminComponent,
     Dj3Component,
-    Dj4Component
+    Dj4Component,
+    Dj5Component
 
 
   ],
@@ -207,7 +209,8 @@ import { Dj4Component } from './music/dj4/dj4.component';
          {path: 'foto' , component:PhotosComponent},
            {path: 'admin' , component:AdminComponent},
            {path:'dj3',component:Dj3Component},
-           {path:'dj4',component:Dj4Component}
+           {path:'dj4',component:Dj4Component},
+           {path:'dj5',component:Dj5Component}
 
 
     ]),
