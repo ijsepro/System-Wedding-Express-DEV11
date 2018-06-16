@@ -84,6 +84,7 @@ import { PhotosComponent } from './photographers/photos/photos.component';
 import { AdminComponent } from './admin/admin.component';
 import { Dj3Component } from './music/dj3/dj3.component';
 import { Dj4Component } from './music/dj4/dj4.component';
+import { BalasuriyaComponent } from './salon/balasuriya/balasuriya.component';
 
 
 @NgModule({
@@ -142,7 +143,8 @@ import { Dj4Component } from './music/dj4/dj4.component';
     AdminComponent,
     Dj3Component,
     Dj4Component,
-    Dj5Component
+    Dj5Component,
+    BalasuriyaComponent
 
 
   ],
@@ -210,7 +212,8 @@ import { Dj4Component } from './music/dj4/dj4.component';
            {path: 'admin' , component:AdminComponent},
            {path:'dj3',component:Dj3Component},
            {path:'dj4',component:Dj4Component},
-           {path:'dj5',component:Dj5Component}
+           {path:'dj5',component:Dj5Component},
+           {path: 'bala' , component:BalasuriyaComponent},
 
 
     ]),
